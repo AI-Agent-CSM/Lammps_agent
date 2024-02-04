@@ -24,17 +24,22 @@ RUN apt-get update && \
 # Clone the LAMMPS repository
 RUN git clone -b stable https://github.com/lammps/lammps.git lammps
 
-# Build LAMMPS
-WORKDIR /usr/src/app/lammps/cmake
+# Create a build directory
+WORKDIR /usr/src/app/lammps/build
+
+# Configure the project with CMake
 RUN cmake ../cmake
+
+# Build LAMMPS
 RUN make -j $(nproc)
 RUN make install
 
 # Set the path to the LAMMPS executable
-ENV PATH="/usr/src/app/lammps/src:${PATH}"
+ENV PATH="/usr/src/app/lammps/build:${PATH}"
 
 # Optional: Install Python packages for interacting with LAMMPS (like PyLammps)
-RUN pip3 install lammps-cython
+# RUN pip3 install numpy
+# RUN pip3 install lammps-cython
 
 # Set the default command for the container
 CMD ["bash"]

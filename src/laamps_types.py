@@ -1,0 +1,25 @@
+from pydantic import BaseModel, Field
+from typing import Optional, List
+
+class LammpsOptions(BaseModel):
+    echo: Optional[str] = Field(None, description="Set the style of command echoing")
+    help: Optional[bool] = Field(None, description="Print a help summary")
+    in_file: Optional[str] = Field(None, alias="in", description="Specify an input script file")
+    kokkos: Optional[str] = Field(None, description="Enable or disable KOKKOS support")
+    log: Optional[str] = Field(None, description="Specify a log file")
+    mdi: Optional[List[str]] = Field(None, description="Flags for MolSSI Driver Interface")
+    mpicolor: Optional[int] = Field(None, description="MPI color for simultaneous executable launches")
+    cite: Optional[str] = Field(None, description="Citation style or file name")
+    nocite: Optional[bool] = Field(None, description="Disable citation reminder")
+    nonbuf: Optional[bool] = Field(None, description="Turn off buffering for screen and logfile")
+    package: Optional[List[str]] = Field(None, description="Invoke the package command with arguments")
+    partition: Optional[List[str]] = Field(None, description="Invoke LAMMPS in multi-partition mode")
+    plog: Optional[str] = Field(None, description="Specify the base name for partition log files")
+    pscreen: Optional[str] = Field(None, description="Specify the base name for partition screen files")
+    reorder: Optional[List[str]] = Field(None, description="Reorder processors")
+    restart2data: Optional[List[str]] = Field(None, description="Convert restart file to data file")
+    restart2dump: Optional[List[str]] = Field(None, description="Convert restart file to dump file")
+    screen: Optional[str] = Field(None, description="Specify a file for screen output")
+    skiprun: Optional[bool] = Field(None, description="Skip the actual run or minimize commands")
+    suffix: Optional[str] = Field(None, description="Use variants of various styles if they exist")
+    var: Optional[List[str]] = Field(None, description="Specify variables for substitution in the input script")
