@@ -19,7 +19,8 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     libfftw3-dev \
-    libopenmpi-dev
+    libopenmpi-dev \
+    vim
 
 # Clone the LAMMPS repository
 RUN git clone -b stable https://github.com/lammps/lammps.git lammps
@@ -39,7 +40,10 @@ ENV PATH="/usr/src/app/lammps/build:${PATH}"
 
 # Optional: Install Python packages for interacting with LAMMPS (like PyLammps)
 # RUN pip3 install numpy
-# RUN pip3 install lammps-cython
+# RUN pip3 install lammps-cythonhttps://github.com/AI-Agent-CSM/Lammps_agent.git
+
+RUN git clone https://github.com/AI-Agent-CSM/Lammps_agent.git
+RUN pip3 install fastapi uvicorn
 
 # Set the default command for the container
 CMD ["bash"]

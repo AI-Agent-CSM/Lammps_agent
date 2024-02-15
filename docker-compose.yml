@@ -38,10 +38,11 @@ services:
 
 
   laamps:
-    image: laamps_simulation
+    build: .
+    image: laamps_simulation  
     container_name: laamps
     ports:
-     - "8080:8080"
+     - "3000:3000"
     volumes:
       - laamps:/root/.laamps
 
