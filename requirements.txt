@@ -1,9 +1,10 @@
 Flask==2.1.1
-PyPDF2==1.26.0
-docx==0.2.5
-streamlit==1.5.0
-openai==0.12.6
 requests==2.26.0
+streamlit==1.5.0
 python-dotenv==0.19.1
+PyPDF2==1.26.0
+python-docx==0.2.5
+openai==0.12.6
 langchain==0.1.0
-huggingface-hub==0.0.17
+faiss-cpu==1.7.1
+csv
