@@ -3,7 +3,8 @@ This Streamlit app allows users to upload files, process them, run a LAMMPS simu
 
 ## Setup
 
-Install the required packages: pip install -r requirements.txt
+Install the required packages: 
+  - pip install -r requirements.txt
 
 Ensure you have the necessary APIs and keys for OpenAI
 
@@ -11,7 +12,8 @@ Make sure you have installed on your system the Large-scale Atomic/Molecular Mas
 
 Running the App
 
-Run the Streamlit app using: streamlit run main.py
+Run the Streamlit app using: 
+-   streamlit run main.py
 
 Upload your files (PDF or DOCX).
 
