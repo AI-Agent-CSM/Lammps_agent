@@ -1,7 +1,7 @@
 # AI-Agent-CSM-UPRM-UND
 This Streamlit app allows users to upload files, process them, run a LAMMPS simulation, and chat with an AI agent. The app utilizes various libraries and tools, including Streamlit, PyPDF2, docx, subprocess, OpenAI, Hugging Face, and more.
 
-Setup
+## Setup
 
 Install the required packages: pip install -r requirements.txt
 
@@ -17,7 +17,7 @@ Upload your files (PDF or DOCX).
 
 Ask questions about the files or run a LAMMPS simulation.
 
-File Processing:
+## File Processing
 
 PDF files are processed using PyPDF2 to extract text.
 DOCX files are processed using the python-docx library to extract text.
@@ -26,7 +26,7 @@ Text Chunking
 Text is split into chunks to improve processing efficiency. This is done using a custom CharacterTextSplitter class.
 Vector Store Creation
 
-LAMMPS Simulations:
+## LAMMPS Simulations
 
 You can request the AI agent to generate the LAMMPS input script and run the simmulation
 You can also paste your LAMMPS input script into the provided text area.
@@ -36,13 +36,13 @@ Chat with AI Agent
 Ask questions about the uploaded files using the chat input.
 The AI agent will provide responses based on the content of the files and previous interactions.
 
-API:
+## API
 
 The RESTful API is used to set and retrieve the OpenAI API key. The API endpoints are:
 - POST /api/set_api_key: Set the OpenAI API key.
 - GET /api/get_api_key: Retrieve the OpenAI API key.
 
-Technologies Used:
+## Technologies Used
 
 Python
 Streamlit
@@ -50,7 +50,7 @@ OpenAI API
 Flask (for the RESTful API)
 PyPDF2, docx (for file processing)
 
-Future Work:
+## Future Work
 
 - Integration with vector database ChromaDB to store and enrich documents for the AI agent.
 - Further develop RestfulAPI
