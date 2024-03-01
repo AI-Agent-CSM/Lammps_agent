@@ -1,4 +1,7 @@
 # AI-Agent-CSM-UPRM-UND
+
+This project is performed in collaboration with academics from the University of Puerto Rico, Mayaguez and the University of Notre Dame. The goal of this project is to develop an AI agent specialized in computational soft matter research. It will use a vectorial data base, a restful api to protect the openai api key and will be hosted on a server.
+
 This Streamlit app allows users to upload files, process them, run a LAMMPS simulation, and chat with an AI agent. The app utilizes various libraries and tools, including Streamlit, PyPDF2, docx, subprocess, OpenAI, Hugging Face, and more.
 
 ## Setup
