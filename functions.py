@@ -153,7 +153,6 @@ def handle_user_input(user_question):
         None
     """
     if "generate LAMMPS script" or "generate lammps script" in user_question.lower():
-        # Will need to further develop the prompt (Future Work)
         prompt = """
         Generate a LAMMPS input script for a simulation based on the request description.
         
