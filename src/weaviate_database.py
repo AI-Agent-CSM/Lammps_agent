@@ -61,11 +61,42 @@ class Client:
 
     def __init__(self, client):
         self._parser = Parser()
-        pass
+        self.client = weaviate.connect_to_local(
+            headers={
+            "X-OpenAI-Api-Key": os.environ["OPENAI_APIKEY"]  # Replace with your inference API key
+                })
 
 
     def start_services(self):
+
         pass
+
+
+    def save_data(self, article):
+        # Build article
+        article = article.build()
+        data_authors = [
+            {"Author": article.get("authors"),
+             "affiliation":article.get("affiliations"),
+               },
+        ]
+        data_text_sections = [
+            {"name": article['section'].get("name"), "text": article['section'].get("text")}
+        ]
+        data_paper =[{
+            "title": article.get("title"),
+            "PublicationDate": article.get("publication")
+        }]
+        author_collection = self.client.collections.get("Author")
+        text_collection = self.client.collections.get("Text")
+        paper_collection = self.client.collections.get("Paper")
+        # author_collection.data.insert(
+        # properties=properties,  # A dictionary with the properties of the object
+        # uuid=obj_uuid,  # A UUID for the object
+        # references={"hasCategory": category_uuid},  # e.g. {"hasCategory": "583876f3-e293-5b5b-9839-03f455f14575"}
+    # )
+
+        # Cross reference for the  Author information
 
 
     def init_schemas(self,client, vectorizer :str, generative :str):
@@ -122,7 +153,15 @@ class Client:
 
                     ]  )
             client.collections.create(
-                "References")
+                "References",
+            properties = [
+                Property(name="reference_title", data_type=DataType.TEXT),
+                Property(name="reference_body", data_type=DataType.TEXT),
+            ],
+            references = [
+                ReferenceProperty(name="hasPaper", target_collection="Paper"),
+            ]
+                )
             
             client.collections.create(
                 name = "Figure",
@@ -137,9 +176,9 @@ class Client:
                 ]
                 )
             
-            client.collections.create(
-                "Formula"
-            )
+            # client.collections.create(
+            #     "Formula"
+            # )
 
             
         except:
