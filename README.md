@@ -44,7 +44,7 @@ The AI agent will provide responses based on the content of the files and previo
 
 ## API
 
-The RESTful API is used to set and retrieve the OpenAI API key. The API endpoints are:
+To protect the OpenAI API Key I plan to develop a RESTful API to set and retrieve the OpenAI API key from a server. The API endpoints will be:
 - POST /api/set_api_key: Set the OpenAI API key.
 - GET /api/get_api_key: Retrieve the OpenAI API key.
 
@@ -58,10 +58,10 @@ PyPDF2, docx (for file processing)
 
 ## Future Work
 
-- Integration with vector database ChromaDB to store and enrich documents for the AI agent.
+- Integration with vector database ChromaDB to store, enrich with RAG the AI agent and as a permanent storage in local machine which would later be modified into server hosted.
 - Develop API to protect OpenAI API Key and eliminate manual input of OpenAI API Key
 - Develop Front end sign up, login and home for the AI Agent Program
-- Add ChromaDB for permanent storage in local machine which would later be modified into server hosted
+
   
 
 
