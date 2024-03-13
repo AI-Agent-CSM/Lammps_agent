@@ -59,7 +59,10 @@ PyPDF2, docx (for file processing)
 ## Future Work
 
 - Integration with vector database ChromaDB to store and enrich documents for the AI agent.
-- Further develop RestfulAPI
+- Develop API to protect OpenAI API Key and eliminate manual input of OpenAI API Key
+- Develop Front end sign up, login and home for the AI Agent Program
+- Add ChromaDB for permanent storage in local machine which would later be modified into server hosted
+  
 
 
   
