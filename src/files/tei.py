@@ -203,6 +203,55 @@ class TEI:
             sections.extend([("ABSTRACT", x) for x in sent_tokenize(abstract)])
 
         return sections
+    
+
+    @staticmethod
+    def papers_references(soup):
+        """
+        Extracts references to other papers from the article.
+
+        Args:
+            soup: bs4 handle
+
+        Returns:
+            list of dictionaries containing paper reference information
+        """
+        references = []
+
+        for biblStruct in soup.find_all("biblStruct"):
+            # Initialize a dictionary to hold this reference's information
+            reference = {}
+
+            # Extract the title of the analytic work (if available)
+            analytic_title = biblStruct.find("analytic").find("title") if biblStruct.find("analytic") else None
+            if analytic_title and analytic_title.get("type") == "main":
+                reference["title"] = analytic_title.text.strip()
+
+            # Extract author names
+            authors = []
+            for author in biblStruct.find_all("author"):
+                persName = author.find("persName")
+                if persName:
+                    forename = persName.find("forename").text.strip() if persName.find("forename") else ''
+                    surname = persName.find("surname").text.strip() if persName.find("surname") else ''
+                    authors.append(f"{forename} {surname}".strip())
+            if authors:
+                reference["authors"] = "; ".join(authors)
+
+            # Extract the publication title
+            monogr_title = biblStruct.find("monogr").find("title") if biblStruct.find("monogr") else None
+            if monogr_title and monogr_title.get("level") == "m":
+                reference["publication_title"] = monogr_title.text.strip()
+
+            # Extract the publication date
+            imprint_date = biblStruct.find("imprint").find("date") if biblStruct.find("imprint") else None
+            if imprint_date and imprint_date.get("type") == "published":
+                reference["publication_date"] = imprint_date["when"]
+
+            # Append this reference to the list of references
+            references.append(reference)
+
+        return references
 
     @staticmethod
     def text(soup, title):
