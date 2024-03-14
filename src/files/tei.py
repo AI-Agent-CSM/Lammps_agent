@@ -5,13 +5,14 @@ TEI (Text Encoding Initiative) XML processing module
 import datetime
 import hashlib
 
+
 from bs4 import BeautifulSoup
 from dateutil import parser
 from nltk.tokenize import sent_tokenize
 
-from ..schema.article import Article
-from ..table import Table
-from ..text import Text
+from files.article import Article
+from files.table import Table
+from files.text import Text
 
 
 class TEI:

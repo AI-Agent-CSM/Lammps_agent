@@ -1,8 +1,9 @@
 import weaviate
 from weaviate.classes.config import Property, DataType, ReferenceProperty
 import weaviate.classes as wvc
+weaviate.util.generate_uuid5
 import argparse
-import os
+import uuid
 #  this is a file for ingesting XML Scientific data into Weaviate
 # By using a tools like Grobib for converting pdfs to XML/TEI format
 # to search in a smart way scientific papers.
@@ -23,34 +24,34 @@ def main():
 
 
 
-class Parser():
-    # LIB/Text parser.
+# class Parser():
+#     # LIB/Text parser.
 
-    def parse_xml(self, xml_file):
-        # Parse the XML file using an XML parser like ElementTree.
+#     def parse_xml(self, xml_file):
+#         # Parse the XML file using an XML parser like ElementTree.
 
-        import xml.etree.ElementTree as ET
+#         import xml.etree.ElementTree as ET
 
-        tree = ET.parse(xml_file)
-        root = tree.getroot()
+#         tree = ET.parse(xml_file)
+#         root = tree.getroot()
 
 
 
-    def get_batch_data(self, root):
-        # Extract data from XML and return a list of dicts
-        data = []
+#     def get_batch_data(self, root):
+#         # Extract data from XML and return a list of dicts
+#         data = []
 
-        for child in root:
-            paper = {}
-            paper["title"] = child.find("title").text
-            paper["PublicationDate"] = child.find("date").text
-            data.append(paper)
+#         for child in root:
+#             paper = {}
+#             paper["title"] = child.find("title").text
+#             paper["PublicationDate"] = child.find("date").text
+#             data.append(paper)
 
-        return data
+#         return data
     
-    def insert_pdf():
-        # Uses Grobib for transforming the document to XML/TEI format
-        pass
+#     def insert_pdf():
+#         # Uses Grobib for transforming the document to XML/TEI format
+#         pass
 
 
 
@@ -58,9 +59,7 @@ class Parser():
 
 class Client:
 #  A wrapper class for intereating with all the tools generated in here
-
     def __init__(self, client):
-        self._parser = Parser()
         self.client = weaviate.connect_to_local(
             headers={
             "X-OpenAI-Api-Key": os.environ["OPENAI_APIKEY"]  # Replace with your inference API key
@@ -77,26 +76,75 @@ class Client:
         article = article.build()
         data_authors = [
             {"Author": article.get("authors"),
-             "affiliation":article.get("affiliations"),
                },
         ]
+            # Split authors string into a list of authors
+        authors_list = article.get("authors").split('; ')
+        affiliations_list = article.get("affiliations").split(',')
+    
+    # Create a list of author entries for the database
+        data_authors = [{"Author": author.strip(), "affiliation": article.get("affiliations")} for author in authors_list]
+    
         data_text_sections = [
             {"name": article['section'].get("name"), "text": article['section'].get("text")}
         ]
         data_paper =[{
             "title": article.get("title"),
-            "PublicationDate": article.get("publication")
+            "PublicationDate": article.get("publication"),
+            "affiliation":article.get("affiliations"),
         }]
         author_collection = self.client.collections.get("Author")
-        text_collection = self.client.collections.get("Text")
         paper_collection = self.client.collections.get("Paper")
-        # author_collection.data.insert(
-        # properties=properties,  # A dictionary with the properties of the object
-        # uuid=obj_uuid,  # A UUID for the object
-        # references={"hasCategory": category_uuid},  # e.g. {"hasCategory": "583876f3-e293-5b5b-9839-03f455f14575"}
-    # )
+        text_sections_collection = self.client.collections.get("TextSections")
 
-        # Cross reference for the  Author information
+
+        #  Before adding a new uuid indentifier we must firt check on the dataset
+        #  to see if the uuid already exists. If it does we must update the data
+
+        authors_response = author_collection.query.bm25(query=data_authors["Author"], query_properties=["Author"])
+        if authors_response["data"]["Get"]["Author"][0]:
+            author_uuid = authors_response["data"]["Get"]["Author"][0].uuid
+        else:
+            author_uuid = author_collection.insert(data_authors)
+
+
+        paper_response = paper_collection.query.bm25(query=data_paper["title"], query_properties=["title"])
+        if paper_response["data"]["Get"]["Paper"][0]:
+            paper_uuid = paper_response["data"]["Get"]["Paper"][0].uuid
+        else:
+            paper_collection.insert(data_paper)
+
+        
+
+        # Create the references between the authors and the papers
+            author_collection.data.reference_add(author_uuid,"hasPaper", paper_uuid)
+            paper_collection.data.reference_add(paper_uuid,"hasAuthor", author_uuid)
+            
+
+        #  put in a batch the text sections
+            
+        with text_sections_collection.batch.dynamic() as batch:
+            for data_row in data_text_sections:
+                batch.add_object(
+                properties=data_row,
+                references= [
+                    ReferenceProperty(
+                        name="hasAuthor",
+                        uuid=author_uuid,
+                    ),
+                    ReferenceProperty(
+                        name="hasPaper",
+                        uuid=paper_uuid,
+                    ),
+                ]
+                )
+            
+
+
+            
+
+
+
 
 
     def init_schemas(self,client, vectorizer :str, generative :str):
@@ -116,6 +164,7 @@ class Client:
                 properties=[
                     Property(name="title", data_type=DataType.TEXT,),
                     Property("PublicationDate", data_type=DataType.DATE),
+                    Property(name="affiliation", data_type=DataType.TEXT),
                     
                 ],
                 references=[
@@ -131,7 +180,6 @@ class Client:
                 "Author",
                 properties=[
                     Property(name="author", data_type=DataType.TEXT),
-                    Property(name="affiliation", data_type=DataType.TEXT),
 
                 ],
                 referencess=[
