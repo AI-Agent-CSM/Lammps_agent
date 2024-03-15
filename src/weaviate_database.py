@@ -1,4 +1,3 @@
-
 import weaviate
 from weaviate.classes.config import Property, DataType, ReferenceProperty
 import weaviate.classes as wvc
@@ -82,11 +81,11 @@ class Client:
         # data_text_sections = [
         # {"name": section[0], "text": section["text"]} for section in article['sections']
         # ]
-        data_paper =[{
+        data_paper ={
             "title": article.get("title"),
             "PublicationDate": article.get("publication"),
             "affiliation":article.get("affiliations"),
-        }]
+        }
         author_collection = self.client.collections.get("Author")
         paper_collection = self.client.collections.get("Paper")
         text_sections_collection = self.client.collections.get("TextSectionTemporal")
@@ -94,47 +93,45 @@ class Client:
 
         #  Before adding a new uuid indentifier we must firt check on the dataset
         #  to see if the uuid already exists. If it does we must update the data
+        paper_response = paper_collection.query.bm25(query=data_paper["title"], query_properties=["title"])
+        if paper_response.objects:
+            if paper_response.objects[0]:
+                paper_uuid = paper_response.objects[0].uuid
+        else:
+            paper_uuid = paper_collection.data.insert(data_paper)
+
+
+
         for author in data_authors:
             authors_response = author_collection.query.bm25(query=author['name'], query_properties=["name"])
-            print("respons3e")
-            print(authors_response)
             if authors_response.objects:
-                if authors_response["data"]["Get"]["Author"][0]:
-                    author_uuid = authors_response["data"]["Get"]["name"][0].uuid
+                if authors_response.objects[0]:
+                    author_uuid = authors_response.objects[0].uuid
             else:
-                author_uuid = author_collection.data.insert(data_authors)
-
-        paper_response = paper_collection.query.bm25(query=data_paper["title"], query_properties=["title"])
-        if paper_response["data"]["Get"]["Paper"][0]:
-            paper_uuid = paper_response["data"]["Get"]["Paper"][0].uuid
-        else:
-            paper_collection.insert(data_paper)
-
-        
-
-        # Create the references between the authors and the papers
+                author_uuid = author_collection.data.insert(author)
             author_collection.data.reference_add(author_uuid,"hasPaper", paper_uuid)
             paper_collection.data.reference_add(paper_uuid,"hasAuthor", author_uuid)
             
 
         #  put in a batch the text sections
             
-        with text_sections_collection.batch.dynamic() as batch:
-            for data_row in article['sections']:
-                batch.add_object(
-                properties=data_row,
-                references= [
-                    ReferenceProperty(
-                        name="hasAuthor",
-                        uuid=author_uuid,
-                    ),
-                    ReferenceProperty(
-                        name="hasPaper",
-                        uuid=paper_uuid,
-                    ),
-                ]
-                )
-            
+        
+        for data_row in article['sections']:
+            print(data_row)
+            uuid_text_section = uuid.uuid4()
+            text_sections_collection.data.insert(
+            uuid=uuid_text_section,
+            properties=data_row,
+            )
+            print("author")
+            print(author_uuid)
+            print("paper")
+            print(paper_uuid)
+            print("yext_uuid")
+            print(uuid_text_section)
+            # text_sections_collection.data.reference_add(uuid_text_section,"hasAuthor", author_uuid)
+            text_sections_collection.data.reference_add(uuid_text_section,"hasPaper", paper_uuid)
+        
 
 
             
@@ -183,8 +180,8 @@ class Client:
         self.client.collections.create(
             "TextSectionTemporal" ,
             properties=[
-                Property(name="section_title", data_type=DataType.TEXT),
-                Property(name="section_text", data_type=DataType.TEXT),
+                Property(name="name", data_type=DataType.TEXT),
+                Property(name="text", data_type=DataType.TEXT),
             ],
             # referecences = [
             #     ReferenceProperty(name="hasPaper", target_collection="Paper"),
