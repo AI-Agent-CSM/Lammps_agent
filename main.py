@@ -2,46 +2,9 @@ import streamlit as st
 import os
 import subprocess
 from dotenv import load_dotenv
-import requests
 
-from functions import get_files_text, get_text_chunks, get_vectorstore, get_conversation_chain, handle_user_input
-from api import set_api_key, get_api_key
-
-def set_api_key(api_key):
-    """
-    Sets the OpenAI API key using the RESTful API.
-
-    Args:
-        api_key (str): OpenAI API key.
-
-    Returns:
-        None
-    """
-    response = requests.post('http://localhost:5000/api/set_api_key', json={'api_key': api_key})
-    if response.status_code == 200:
-        st.success('API key set successfully.')
-    else:
-        st.error('Failed to set API key.')
-
-def get_api_key():
-    """
-    Retrieves the OpenAI API key using the RESTful API.
-
-    Returns:
-        str: OpenAI API key.
-    """
-    response = requests.get('http://localhost:5000/api/get_api_key')
-    if response.status_code == 200:
-        return response.json()['api_key']
-    else:
-        st.error('Failed to retrieve API key.')
-
-load_dotenv()
-
-# RESTful API to set the OpenAI API key
-openai_api_key = get_api_key()
-
-openai.api_key = openai_api_key
+from functions import get_files_text, get_text_chunks, get_vectorstore, get_conversation_chain
+from agent import handle_user_input
 
 def main():
     """
@@ -64,8 +27,15 @@ def main():
     if "processComplete" not in st.session_state:
         st.session_state.processComplete = None
 
+    # Check if the CSMdb directory exists
+    if os.path.exists("CSMdb"):
+        vetorestore = Chroma(persist_directory="CSMdb")
+    else:
+        vetorestore = None
+
     with st.sidebar:
         uploaded_files =  st.file_uploader("Upload your file",type=['pdf','docx'],accept_multiple_files=True)
+        openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
         process = st.button("Process")
         lammps_script = st.text_area(" LAMMPS input script ")
         run_simulation = st.button("Run Simulation")
@@ -89,24 +59,23 @@ def main():
         files_text = get_files_text(uploaded_files)
         # get text chunks
         text_chunks = get_text_chunks(files_text)
-        # create vetore stores
-        vetorestore = get_vectorstore(text_chunks)
-         # create conversation chain
-        st.session_state.conversation = get_conversation_chain(vetorestore,openai_api_key) #for openAI
-        # st.session_state.conversation = get_conversation_chain(vetorestore) #for huggingface
-
-        st.session_state.processComplete = True
+        if vetorestore is None:
+            # create vetore stores
+            vetorestore = get_vectorstore(text_chunks)
+            st.session_state.processComplete = True
+        else:
+            vetorestore.add_documents(text_chunks)
 
     if  st.session_state.processComplete == True:
         user_question = st.text_input("Ask Question about your files.")
         if user_question:
             handle_user_input(user_question)
-            
+
     if run_simulation:
         if not lammps_script:
             st.warning("Please paste your LAMMPS input script to run the simulation.")
             st.stop()
-        
+
         # Save the LAMMPS input script to a file
         with open("lammps_input.in", "w") as f:
             f.write(lammps_script)
@@ -123,4 +92,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
