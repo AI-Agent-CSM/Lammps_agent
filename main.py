@@ -27,7 +27,6 @@ def main():
     if "processComplete" not in st.session_state:
         st.session_state.processComplete = None
 
-    # Check if the CSMdb directory exists
     if os.path.exists("CSMdb"):
         vetorestore = Chroma(persist_directory="CSMdb")
     else:
@@ -57,10 +56,8 @@ def main():
             st.info("Please add your OpenAI API key to continue.")
             st.stop()
         files_text = get_files_text(uploaded_files)
-        # get text chunks
         text_chunks = get_text_chunks(files_text)
         if vetorestore is None:
-            # create vetore stores
             vetorestore = get_vectorstore(text_chunks)
             st.session_state.processComplete = True
         else:
@@ -76,11 +73,9 @@ def main():
             st.warning("Please paste your LAMMPS input script to run the simulation.")
             st.stop()
 
-        # Save the LAMMPS input script to a file
         with open("lammps_input.in", "w") as f:
             f.write(lammps_script)
 
-        # Run the LAMMPS simulation
         st.info("Running LAMMPS simulation...")
         process = subprocess.Popen(["lammps", "-in", "lammps_input.in"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
