@@ -3,7 +3,10 @@ import os
 import subprocess
 from dotenv import load_dotenv
 
-from functions import get_files_text, get_text_chunks, get_vectorstore, get_conversation_chain
+from functions import get_files_text
+from functions import get_text_chunks
+from functions import get_vectorstore
+from functions import get_conversation_chain
 from agent import handle_user_input
 
 def main():
