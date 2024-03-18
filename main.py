@@ -39,8 +39,12 @@ def main():
         vetorestore = None
 
     with st.sidebar:
-        uploaded_files =  st.file_uploader("Upload your file",type=['pdf','docx'],accept_multiple_files=True)
-        openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+        uploaded_files =  st.file_uploader("Upload your file"
+                                           type=['pdf','docx'],
+                                           accept_multiple_files=True)
+        openai_api_key = st.text_input("OpenAI API Key",
+                                       key="chatbot_api_key",
+                                       type="password")
         process = st.button("Process")
         lammps_script = st.text_area(" LAMMPS input script ")
         run_simulation = st.button("Run Simulation")
@@ -83,7 +87,8 @@ def main():
             f.write(lammps_script)
 
         st.info("Running LAMMPS simulation...")
-        process = subprocess.Popen(["lammps", "-in", "lammps_input.in"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        process = subprocess.Popen(["lammps", "-in", "lammps_input.in"],
+                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
 
         if process.returncode != 0:
