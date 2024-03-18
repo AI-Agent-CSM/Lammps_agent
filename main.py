@@ -10,7 +10,8 @@ def main():
     """
     Sets up the Streamlit app and handles user interactions.
 
-    The app allows users to upload files, process them, run a LAMMPS simulation, and chat with an AI agent.
+    The app allows users to upload files, process them, run a LAMMPS simulation,
+    and chat with an AI agent.
     """
     load_dotenv()
     favicon_path = os.path.join("logo", "browser.png")
