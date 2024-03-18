@@ -22,7 +22,9 @@ def main():
         st.set_page_config(page_title="AI Agent CSM", page_icon=favicon_path)
     st.header("")
     st.image(os.path.join("logo", "logo.png"), width=100)
-    st.markdown("<div style='text-align: left; font-size: small;'>Computational Soft Matter Research AI Agent</div>", unsafe_allow_html=True)
+    style = "'text-align: left; font-size: small;'"
+    text = "Computational Soft Matter Research AI Agent"
+    st.markdown(f"<div style={style}>{text}</div>", unsafe_allow_html=True)
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
