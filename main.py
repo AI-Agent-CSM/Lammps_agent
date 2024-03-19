@@ -72,6 +72,7 @@ def main():
         process = st.button("Process")
         lammps_script = st.text_area(" LAMMPS input script ")
         run_simulation = st.button("Run Simulation")
+
         show_history = st.checkbox("Show Chat History")
         if show_history:
             history()
