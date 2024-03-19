@@ -84,6 +84,7 @@ def main():
         if not openai_api_key:
             st.info("Please add your OpenAI API key to continue.")
             st.stop()
+
         files_text = get_files_text(uploaded_files)
         text_chunks = get_text_chunks(files_text)
         if vetorestore is None:
