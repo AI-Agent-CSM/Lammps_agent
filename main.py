@@ -3,14 +3,28 @@ import os
 import subprocess
 from dotenv import load_dotenv
 
-from functions import get_files_text, get_text_chunks, get_vectorstore, get_conversation_chain
+from functions import get_files_text
+from functions import get_text_chunks
+from functions import get_vectorstore
+from functions import get_conversation_chain
 from agent import handle_user_input
+
+def get_selected_sessions(hist):
+    sessions = [i for i in enumerate(hist) if st.checkbox(f"Session {i+1}")]
+    return sessions
+
+def erase_chat_history():
+    hist = st.session_state.chat_history
+    sessions = get_selected_sessions(hist)
+    chat_history = [session for i, session in enumerate(hist) if i not in sessions]
+    return chat_history
 
 def main():
     """
     Sets up the Streamlit app and handles user interactions.
 
-    The app allows users to upload files, process them, run a LAMMPS simulation, and chat with an AI agent.
+    The app allows users to upload files, process them, run a LAMMPS simulation,
+    and chat with an AI agent.
     """
     load_dotenv()
     favicon_path = os.path.join("logo", "browser.png")
@@ -18,7 +32,9 @@ def main():
         st.set_page_config(page_title="AI Agent CSM", page_icon=favicon_path)
     st.header("")
     st.image(os.path.join("logo", "logo.png"), width=100)
-    st.markdown("<div style='text-align: left; font-size: small;'>Computational Soft Matter Research AI Agent</div>", unsafe_allow_html=True)
+    style = "'text-align: left; font-size: small;'"
+    text = "Computational Soft Matter Research AI Agent"
+    st.markdown(f"<div style={style}>{text}</div>", unsafe_allow_html=True)
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
@@ -27,15 +43,18 @@ def main():
     if "processComplete" not in st.session_state:
         st.session_state.processComplete = None
 
-    # Check if the CSMdb directory exists
     if os.path.exists("CSMdb"):
         vetorestore = Chroma(persist_directory="CSMdb")
     else:
         vetorestore = None
 
     with st.sidebar:
-        uploaded_files =  st.file_uploader("Upload your file",type=['pdf','docx'],accept_multiple_files=True)
-        openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+        uploaded_files =  st.file_uploader("Upload your file"
+                                           type=['pdf','docx'],
+                                           accept_multiple_files=True)
+        openai_api_key = st.text_input("OpenAI API Key",
+                                       key="chatbot_api_key",
+                                       type="password")
         process = st.button("Process")
         lammps_script = st.text_area(" LAMMPS input script ")
         run_simulation = st.button("Run Simulation")
@@ -45,8 +64,7 @@ def main():
                 st.checkbox(f"Session {i+1}")
             erase_history = st.button("Erase Selected Sessions")
             if erase_history:
-                selected_sessions = [i for i, selected in enumerate(st.session_state.chat_history) if st.checkbox(f"Session {i+1}")]
-                st.session_state.chat_history = [session for i, session in enumerate(st.session_state.chat_history) if i not in selected_sessions]
+                st.session_state.chat_history = erase_chat_history()
 
         erase_all_history = st.button("Erase All Chat History")
         if erase_all_history:
@@ -57,10 +75,8 @@ def main():
             st.info("Please add your OpenAI API key to continue.")
             st.stop()
         files_text = get_files_text(uploaded_files)
-        # get text chunks
         text_chunks = get_text_chunks(files_text)
         if vetorestore is None:
-            # create vetore stores
             vetorestore = get_vectorstore(text_chunks)
             st.session_state.processComplete = True
         else:
@@ -76,13 +92,12 @@ def main():
             st.warning("Please paste your LAMMPS input script to run the simulation.")
             st.stop()
 
-        # Save the LAMMPS input script to a file
         with open("lammps_input.in", "w") as f:
             f.write(lammps_script)
 
-        # Run the LAMMPS simulation
         st.info("Running LAMMPS simulation...")
-        process = subprocess.Popen(["lammps", "-in", "lammps_input.in"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        process = subprocess.Popen(["lammps", "-in", "lammps_input.in"],
+                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
 
         if process.returncode != 0:
