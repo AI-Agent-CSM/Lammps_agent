@@ -9,6 +9,16 @@ from functions import get_vectorstore
 from functions import get_conversation_chain
 from agent import handle_user_input
 
+def get_selected_sessions(hist):
+    sessions = [i for i in enumerate(hist) if st.checkbox(f"Session {i+1}")]
+    return sessions
+
+def erase_chat_history():
+    hist = st.session_state.chat_history
+    sessions = get_selected_sessions(hist)
+    chat_history = [session for i, session in enumerate(hist) if i not in sessions]
+    return chat_history
+
 def main():
     """
     Sets up the Streamlit app and handles user interactions.
@@ -54,8 +64,7 @@ def main():
                 st.checkbox(f"Session {i+1}")
             erase_history = st.button("Erase Selected Sessions")
             if erase_history:
-                selected_sessions = [i for i, selected in enumerate(st.session_state.chat_history) if st.checkbox(f"Session {i+1}")]
-                st.session_state.chat_history = [session for i, session in enumerate(st.session_state.chat_history) if i not in selected_sessions]
+                st.session_state.chat_history = erase_chat_history()
 
         erase_all_history = st.button("Erase All Chat History")
         if erase_all_history:
