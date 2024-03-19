@@ -9,6 +9,16 @@ from functions import get_vectorstore
 from functions import get_conversation_chain
 from agent import handle_user_input
 
+def uploader():
+    txt = "Upload your file"
+    accept = ['pdf', 'docx']
+    files = st.file_uploader(txt, type=accept, accept_multiple_files=True)
+    return files
+
+def getAPIKeyOpenAI():
+    key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+    return key
+
 def get_selected_sessions(hist):
     sessions = [i for i in enumerate(hist) if st.checkbox(f"Session {i+1}")]
     return sessions
@@ -49,12 +59,8 @@ def main():
         vetorestore = None
 
     with st.sidebar:
-        uploaded_files =  st.file_uploader("Upload your file"
-                                           type=['pdf','docx'],
-                                           accept_multiple_files=True)
-        openai_api_key = st.text_input("OpenAI API Key",
-                                       key="chatbot_api_key",
-                                       type="password")
+        uploaded_files = uploader()
+        openai_api_key = getAPIKeyOpenAI()
         process = st.button("Process")
         lammps_script = st.text_area(" LAMMPS input script ")
         run_simulation = st.button("Run Simulation")
