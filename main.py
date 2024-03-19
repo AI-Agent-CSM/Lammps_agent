@@ -93,7 +93,7 @@ def main():
         else:
             vetorestore.add_documents(text_chunks)
 
-    if  st.session_state.processComplete == True:
+    if st.session_state.processComplete == True:
         user_question = st.text_input("Ask Question about your files.")
         if user_question:
             handle_user_input(user_question)
