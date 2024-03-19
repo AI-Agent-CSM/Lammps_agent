@@ -107,8 +107,8 @@ def main():
             f.write(lammps_script)
 
         st.info("Running LAMMPS simulation...")
-        process = subprocess.Popen(["lammps", "-in", "lammps_input.in"],
-                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        cmd = ["lammps", "-in", "lammps_input.in"]
+        process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
 
         if process.returncode != 0:
