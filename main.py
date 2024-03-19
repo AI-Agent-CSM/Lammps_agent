@@ -29,6 +29,14 @@ def erase_chat_history():
     chat_history = [session for i, session in enumerate(hist) if i not in sessions]
     return chat_history
 
+def history():
+    for i, session in enumerate(st.session_state.chat_history):
+        st.checkbox(f"Session {i+1}")
+        erase_history = st.button("Erase Selected Sessions")
+        if erase_history:
+            st.session_state.chat_history = erase_chat_history()
+    return
+
 def main():
     """
     Sets up the Streamlit app and handles user interactions.
@@ -66,11 +74,7 @@ def main():
         run_simulation = st.button("Run Simulation")
         show_history = st.checkbox("Show Chat History")
         if show_history:
-            for i, session in enumerate(st.session_state.chat_history):
-                st.checkbox(f"Session {i+1}")
-            erase_history = st.button("Erase Selected Sessions")
-            if erase_history:
-                st.session_state.chat_history = erase_chat_history()
+            history()
 
         erase_all_history = st.button("Erase All Chat History")
         if erase_all_history:
