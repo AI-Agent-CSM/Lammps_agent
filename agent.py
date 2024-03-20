@@ -1,6 +1,6 @@
 import openai
 import subprocess
-import streamlit as s
+import streamlit as st
 
 def handle_user_input(user_question):
     """
