@@ -32,7 +32,7 @@ def get_files_text(uploaded_files):
         elif file_extension == ".csv":
             text += get_csv_text(uploaded_file)
         else:
-            # I placed this handle for unsupported file types or other extensions to add in the future
+            # TODO: add unsupported file types or other extensions
             pass
     return text
 
@@ -95,7 +95,6 @@ def get_text_chunks(text):
     Returns:
         list: List of text chunks.
     """
-    # To split the text into chuncks
     text_splitter = CharacterTextSplitter(
         separator="\n",
         chunk_size=900,
@@ -116,7 +115,6 @@ def get_vectorstore(text_chunks):
         VectorStore: Vector store containing embeddings for the text chunks.
     """
     embeddings = HuggingFaceEmbeddings()
-    # embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
     knowledge_base = FAISS.from_texts(text_chunks,embeddings)
     return knowledge_base
 
