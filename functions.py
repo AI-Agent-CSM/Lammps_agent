@@ -117,12 +117,12 @@ def get_vectorstore(text_chunks):
     knowledge_base = FAISS.from_texts(text_chunks,embeddings)
     return knowledge_base
 
-def get_conversation_chain(vetorestore,openai_api_key):
+def get_conversation_chain(vectorstore,openai_api_key):
     """
     Creates a conversation chain using a vector store and OpenAI API.
 
     Args:
-        vetorestore (VectorStore): Vector store containing text embeddings.
+        vectorstore (VectorStore): Vector store containing text embeddings.
         openai_api_key (str): OpenAI API key.
 
     Returns:
@@ -131,6 +131,6 @@ def get_conversation_chain(vetorestore,openai_api_key):
     key, model, temp = (openai_api_key, 'gpt-3.5-turbo', 0)
     llm = ChatOpenAI(openai_api_key=key, model_name=model, temperature=temp)
     mem = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
-    ret = vetorestore.as_retriever()
+    ret = vectorstore.as_retriever()
     chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=ret, memory=mem)
     return chain
