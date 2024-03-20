@@ -134,4 +134,3 @@ def get_conversation_chain(vetorestore,openai_api_key):
     ret = vetorestore.as_retriever()
     chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=ret, memory=mem)
     return chain
-
