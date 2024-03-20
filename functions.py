@@ -23,8 +23,7 @@ def get_files_text(uploaded_files):
     """
     text = ""
     for uploaded_file in uploaded_files:
-        split_tup = os.path.splitext(uploaded_file.name)
-        file_extension = split_tup[1]
+        _, file_extension = os.path.splitext(uploaded_file.name)
         if file_extension == ".pdf":
             text += get_pdf_text(uploaded_file)
         elif file_extension == ".docx":
@@ -32,7 +31,7 @@ def get_files_text(uploaded_files):
         elif file_extension == ".csv":
             text += get_csv_text(uploaded_file)
         else:
-            # I placed this handle for unsupported file types or other extensions to add in the future
+            # TODO: add unsupported file types or other extensions
             pass
     return text
 
@@ -95,7 +94,6 @@ def get_text_chunks(text):
     Returns:
         list: List of text chunks.
     """
-    # To split the text into chuncks
     text_splitter = CharacterTextSplitter(
         separator="\n",
         chunk_size=900,
@@ -116,27 +114,23 @@ def get_vectorstore(text_chunks):
         VectorStore: Vector store containing embeddings for the text chunks.
     """
     embeddings = HuggingFaceEmbeddings()
-    # embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
     knowledge_base = FAISS.from_texts(text_chunks,embeddings)
     return knowledge_base
 
-def get_conversation_chain(vetorestore,openai_api_key):
+def get_conversation_chain(vectorstore,openai_api_key):
     """
     Creates a conversation chain using a vector store and OpenAI API.
 
     Args:
-        vetorestore (VectorStore): Vector store containing text embeddings.
+        vectorstore (VectorStore): Vector store containing text embeddings.
         openai_api_key (str): OpenAI API key.
 
     Returns:
         ConversationalRetrievalChain: Conversation chain for chatbot interactions.
     """
-    llm = ChatOpenAI(openai_api_key=openai_api_key, model_name = 'gpt-3.5-turbo',temperature=0)
-    memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
-    conversation_chain = ConversationalRetrievalChain.from_llm(
-        llm=llm,
-        retriever=vetorestore.as_retriever(),
-        memory=memory
-    )
-    return conversation_chain
-
+    key, model, temp = (openai_api_key, 'gpt-3.5-turbo', 0)
+    llm = ChatOpenAI(openai_api_key=key, model_name=model, temperature=temp)
+    mem = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
+    ret = vectorstore.as_retriever()
+    chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=ret, memory=mem)
+    return chain
