@@ -130,11 +130,8 @@ def get_conversation_chain(vetorestore,openai_api_key):
     """
     key, model, temp = (openai_api_key, 'gpt-3.5-turbo', 0)
     llm = ChatOpenAI(openai_api_key=key, model_name=model, temperature=temp)
-    memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
-    conversation_chain = ConversationalRetrievalChain.from_llm(
-        llm=llm,
-        retriever=vetorestore.as_retriever(),
-        memory=memory
-    )
-    return conversation_chain
+    mem = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
+    ret = vetorestore.as_retriever()
+    chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=ret, memory=mem)
+    return chain
 
