@@ -23,8 +23,7 @@ def get_files_text(uploaded_files):
     """
     text = ""
     for uploaded_file in uploaded_files:
-        split_tup = os.path.splitext(uploaded_file.name)
-        file_extension = split_tup[1]
+        _, file_extension = os.path.splitext(uploaded_file.name)
         if file_extension == ".pdf":
             text += get_pdf_text(uploaded_file)
         elif file_extension == ".docx":
