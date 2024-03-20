@@ -9,6 +9,16 @@ from functions import get_vectorstore
 from functions import get_conversation_chain
 from agent import handle_user_input
 
+def uploader():
+    txt = "Upload your file"
+    accept = ['pdf', 'docx']
+    files = st.file_uploader(txt, type=accept, accept_multiple_files=True)
+    return files
+
+def getAPIKeyOpenAI():
+    key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+    return key
+
 def get_selected_sessions(hist):
     sessions = [i for i in enumerate(hist) if st.checkbox(f"Session {i+1}")]
     return sessions
@@ -18,6 +28,14 @@ def erase_chat_history():
     sessions = get_selected_sessions(hist)
     chat_history = [session for i, session in enumerate(hist) if i not in sessions]
     return chat_history
+
+def history():
+    for i, session in enumerate(st.session_state.chat_history):
+        st.checkbox(f"Session {i+1}")
+        erase_history = st.button("Erase Selected Sessions")
+        if erase_history:
+            st.session_state.chat_history = erase_chat_history()
+    return
 
 def main():
     """
@@ -49,22 +67,15 @@ def main():
         vetorestore = None
 
     with st.sidebar:
-        uploaded_files =  st.file_uploader("Upload your file"
-                                           type=['pdf','docx'],
-                                           accept_multiple_files=True)
-        openai_api_key = st.text_input("OpenAI API Key",
-                                       key="chatbot_api_key",
-                                       type="password")
+        uploaded_files = uploader()
+        openai_api_key = getAPIKeyOpenAI()
         process = st.button("Process")
         lammps_script = st.text_area(" LAMMPS input script ")
         run_simulation = st.button("Run Simulation")
+
         show_history = st.checkbox("Show Chat History")
         if show_history:
-            for i, session in enumerate(st.session_state.chat_history):
-                st.checkbox(f"Session {i+1}")
-            erase_history = st.button("Erase Selected Sessions")
-            if erase_history:
-                st.session_state.chat_history = erase_chat_history()
+            history()
 
         erase_all_history = st.button("Erase All Chat History")
         if erase_all_history:
@@ -74,6 +85,7 @@ def main():
         if not openai_api_key:
             st.info("Please add your OpenAI API key to continue.")
             st.stop()
+
         files_text = get_files_text(uploaded_files)
         text_chunks = get_text_chunks(files_text)
         if vetorestore is None:
@@ -82,7 +94,7 @@ def main():
         else:
             vetorestore.add_documents(text_chunks)
 
-    if  st.session_state.processComplete == True:
+    if st.session_state.processComplete == True:
         user_question = st.text_input("Ask Question about your files.")
         if user_question:
             handle_user_input(user_question)
@@ -96,8 +108,8 @@ def main():
             f.write(lammps_script)
 
         st.info("Running LAMMPS simulation...")
-        process = subprocess.Popen(["lammps", "-in", "lammps_input.in"],
-                                   stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        cmd = ["lammps", "-in", "lammps_input.in"]
+        process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
 
         if process.returncode != 0:
