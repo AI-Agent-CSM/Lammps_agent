@@ -15,7 +15,7 @@ def uploader():
     files = st.file_uploader(txt, type=accept, accept_multiple_files=True)
     return files
 
-def getAPIKeyOpenAI():
+def get_openai_apikey():
     key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     return key
 
@@ -68,7 +68,7 @@ def main():
 
     with st.sidebar:
         uploaded_files = uploader()
-        openai_api_key = getAPIKeyOpenAI()
+        openai_api_key = get_openai_apikey()
         process = st.button("Process")
         lammps_script = st.text_area(" LAMMPS input script ")
         run_simulation = st.button("Run Simulation")
