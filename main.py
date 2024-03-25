@@ -15,7 +15,7 @@ def uploader():
     files = st.file_uploader(txt, type=accept, accept_multiple_files=True)
     return files
 
-def getAPIKeyOpenAI():
+def get_openai_apikey():
     key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     return key
 
@@ -62,13 +62,13 @@ def main():
         st.session_state.processComplete = None
 
     if os.path.exists("CSMdb"):
-        vetorestore = Chroma(persist_directory="CSMdb")
+        vectorstore = Chroma(persist_directory="CSMdb")
     else:
-        vetorestore = None
+        vectorstore = None
 
     with st.sidebar:
         uploaded_files = uploader()
-        openai_api_key = getAPIKeyOpenAI()
+        openai_api_key = get_openai_apikey()
         process = st.button("Process")
         lammps_script = st.text_area(" LAMMPS input script ")
         run_simulation = st.button("Run Simulation")
@@ -88,11 +88,11 @@ def main():
 
         files_text = get_files_text(uploaded_files)
         text_chunks = get_text_chunks(files_text)
-        if vetorestore is None:
-            vetorestore = get_vectorstore(text_chunks)
+        if vectorstore is None:
+            vectorstore = get_vectorstore(text_chunks)
             st.session_state.processComplete = True
         else:
-            vetorestore.add_documents(text_chunks)
+            vectorstore.add_documents(text_chunks)
 
     if st.session_state.processComplete == True:
         user_question = st.text_input("Ask Question about your files.")
