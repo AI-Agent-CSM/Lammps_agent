@@ -61,11 +61,6 @@ def main():
     if "processComplete" not in st.session_state:
         st.session_state.processComplete = None
 
-    if os.path.exists("CSMdb"):
-        vectorstore = Chroma(persist_directory="CSMdb")
-    else:
-        vectorstore = None
-
     with st.sidebar:
         uploaded_files = uploader()
         openai_api_key = get_openai_apikey()
@@ -85,14 +80,12 @@ def main():
         if not openai_api_key:
             st.info("Please add your OpenAI API key to continue.")
             st.stop()
-
         files_text = get_files_text(uploaded_files)
         text_chunks = get_text_chunks(files_text)
-        if vectorstore is None:
-            vectorstore = get_vectorstore(text_chunks)
-            st.session_state.processComplete = True
-        else:
-            vectorstore.add_documents(text_chunks)
+        vetorestore = get_vectorstore(text_chunks)
+        st.session_state.conversation = get_conversation_chain(vetorestore,openai_api_key)
+
+        st.session_state.processComplete = True
 
     if st.session_state.processComplete == True:
         user_question = st.text_input("Ask Question about your files.")
