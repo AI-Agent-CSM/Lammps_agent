@@ -42,25 +42,18 @@ Click "Run Simulation" to execute the LAMMPS simulation using subprocess if you 
 Ask questions about the uploaded files using the chat input.
 The AI agent will provide responses based on the content of the files and previous interactions.
 
-## API
-
-To protect the OpenAI API Key I plan to develop a RESTful API to set and retrieve the OpenAI API key from a server. The API endpoints will be:
-- POST /api/set_api_key: Set the OpenAI API key.
-- GET /api/get_api_key: Retrieve the OpenAI API key.
-
 ## Technologies Used
 
 Python
 Streamlit
 OpenAI API
-Flask (for the RESTful API)
 PyPDF2, docx (for file processing)
 
 ## Future Work
 
-- Integration with vector database ChromaDB to store, enrich with RAG the AI agent and as a permanent storage in local machine which would later be modified into server hosted.
+- Integration with vector database ChromaDB to store and enrich with RAG the AI agent, and as a permanent storage in local machine which would later be modified into server hosted.
 - Develop API to protect OpenAI API Key and eliminate manual input of OpenAI API Key
-- Develop Front end sign up, login and home for the AI Agent Program
+- Develop Front end sign up, login and for streamlit app
 
   
 
