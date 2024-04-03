@@ -9,37 +9,38 @@ from files.tei import TEI
 # By using a tools like Grobib for converting pdfs to XML/TEI format
 # to search in a smart way scientific papers.
 
+def common_neightbourgs(node1, node2):
 
-# class Parser():
-#     # LIB/Text parser.
+    """Find common neighbours between two nodes"""
+    neighbours1 = node1.neighbours
+    neighbours2 = node2.neighbours
+    common_neighbours = [n for n in neighbours1 if n in neighbours2]
+    return common_neighbours
 
-#     def parse_xml(self, xml_file):
-#         # Parse the XML file using an XML parser like ElementTree.
+def jaccard_score():
+    pass
 
-#         import xml.etree.ElementTree as ET
-
-#         tree = ET.parse(xml_file)
-#         root = tree.getroot()
-
-
-
-#     def get_batch_data(self, root):
-#         # Extract data from XML and return a list of dicts
-#         data = []
-
-#         for child in root:
-#             paper = {}
-#             paper["title"] = child.find("title").text
-#             paper["PublicationDate"] = child.find("date").text
-#             data.append(paper)
-
-#         return data
-    
-#     def insert_pdf():
-#         # Uses Grobib for transforming the document to XML/TEI format
-#         pass
+def search_generation(query: str,search_type: str, depth: int = 2):
+    """
+    Make a generation based on a query, a class,  the objects to traversal and the depth
+    """
 
 
+    pass
+
+
+def weaviate_generative_search(client, query: str,prompt: str, limit: int = 1, collection: str = "Article"):
+    try:
+        reviews = client.collections.get(collection)
+        response = reviews.generate.near_text(
+            query=query,
+            single_prompt=prompt,
+            limit=limit
+        )
+
+        return response
+    finally:
+        client.close()
 
 
 
@@ -52,14 +53,11 @@ class Client:
                 })
 
 
-    def start_services(self):
-
-        pass
 
     def ingest_data(self, file_name: str):
         with open(file_name, "r") as f:
             data = f.read()
-        article = TEI().parse(data,"Not Yet Avalible")
+        article = TEI().parse(data,"")
         self.save_article(article)
 
 
@@ -153,74 +151,57 @@ class Client:
         self.client.collections.create(
             name = "Paper",
             vectorizer_config = wvc.config.Configure.Vectorizer.text2vec_openai(),
-            generative_config=wvc.config.Configure.Generative.cohere(),
+            generative_config=wvc.config.Configure.Generative.openai(),
             properties=[
                 Property(name="title", data_type=DataType.TEXT,),
                 Property(name="PublicationDate", data_type=DataType.DATE),
                 Property(name="affiliation", data_type=DataType.TEXT),
                 
-            ],
-            # references=[
-            #     ReferenceProperty(name="hasAuthor", target_collection="Author"),
-            #     ReferenceProperty(name="hasSection", target_collection="TextSection"),
-            #     ReferenceProperty(name="hasReferencedPaper", target_collection="Paper"),
-
-            # ]
+            ]
         )
         self.client.collections.create(
-            "Author",
+            name = "Author",
+            vectorizer_config = wvc.config.Configure.Vectorizer.text2vec_openai(),
+            generative_config=wvc.config.Configure.Generative.openai(),
             properties=[
-                Property(name="name", data_type=DataType.TEXT),
+                Property(name="name", data_type=DataType.TEXT,
+                          vectorize_property_name= True),
 
-            ],
-            # referencess=[
-            #     ReferenceProperty(name="hasPaper", target_collection="Paper"),
-            # ]
+            ]
         )
         self.client.collections.create(
-            "TextSectionTemporal" ,
+            name = "TextSectionTemporal" ,
+            vectorizer_config = wvc.config.Configure.Vectorizer.text2vec_openai(),
+            generative_config=wvc.config.Configure.Generative.openai(),
             properties=[
                 Property(name="name", data_type=DataType.TEXT),
                 Property(name="text", data_type=DataType.TEXT),
             ],
-            # referecences = [
-            #     ReferenceProperty(name="hasPaper", target_collection="Paper"),
-            #     ReferenceProperty(name="hasAuthor", target_collection="Author"),
-            # ]
         )
         self.client.collections.create(
-            "TextSection" ,
+            name = "TextSection" ,
+            vectorizer_config = wvc.config.Configure.Vectorizer.text2vec_openai(),
+            generative_config=wvc.config.Configure.Generative.openai(),
             properties=[
                 Property(name="section_title", data_type=DataType.TEXT),
                 Property(name="section_text", data_type=DataType.TEXT),
                 Property(name="section_id", data_type=DataType.INT),
                 Property(name="parent_section_title", data_type=DataType.TEXT),
 
-            ],
-                
-                # references = [
-                #     ReferenceProperty(name="hasPaper", target_collection="Paper"),
-
-                # ]  
+            ]
         )
         
         self.client.collections.create(
             name = "Figure",
+            vectorizer_config = wvc.config.Configure.Vectorizer.text2vec_openai(),
+            generative_config=wvc.config.Configure.Generative.openai(),
             properties=[
                 Property(name="figure_caption", data_type=DataType.TEXT),
                 Property(name="figure_image", data_type=DataType.INT_ARRAY),
                 
-            ],
-            # references = [
-            #     ReferenceProperty(name="belongsToPaper", target_collection="Paper"),
-            #     ReferenceProperty(name="belongsToSection", target_collection="TextSection"),
-            # ]
+            ]
             )
-        
-        # client.collections.create(
-        #     "Formula"
-        # )
-
+    
         # Set references
         papers = self.client.collections.get("Paper")
         papers.config.add_reference(
@@ -238,5 +219,3 @@ class Client:
         sections.config.add_reference(ReferenceProperty(name="hasAuthor", target_collection="Author"),)
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
