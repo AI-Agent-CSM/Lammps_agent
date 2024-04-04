@@ -17,16 +17,6 @@ def common_neightbourgs(node1, node2):
     common_neighbours = [n for n in neighbours1 if n in neighbours2]
     return common_neighbours
 
-def jaccard_score():
-    pass
-
-def search_generation(query: str,search_type: str, depth: int = 2):
-    """
-    Make a generation based on a query, a class,  the objects to traversal and the depth
-    """
-
-
-    pass
 
 
 def weaviate_generative_search(client, query: str,prompt: str, limit: int = 1, collection: str = "Article"):
@@ -132,11 +122,6 @@ class Client:
         
 
 
-            
-
-
-
-
 
     def init_schemas(self):
         """
@@ -211,11 +196,16 @@ class Client:
         )
         papers.config.add_reference(
             ReferenceProperty(name="hasReferencedPaper", target_collection="Paper"))
+        papers.config.add_reference(
+            ReferenceProperty(name="LinkPrediction", target_collection="Paper")
+        )
         
         authors = self.client.collections.get("Author")
         authors.config.add_reference(ReferenceProperty(name="hasPaper", target_collection="Paper"),)
+        authors.config.add_reference(ReferenceProperty(name="LinkPrediction", target_collection="Author"),)
         sections = self.client.collections.get("TextSectionTemporal")
         sections.config.add_reference(ReferenceProperty(name="hasPaper", target_collection="Paper"),)
-        sections.config.add_reference(ReferenceProperty(name="hasAuthor", target_collection="Author"),)
+        sections.config.add_reference(ReferenceProperty(name="hasAuthor", target_collection="Author"))
+        sections.config.add_reference(ReferenceProperty(name="LinkPrediction", target_collection="TextSectionTemporal"))
 
 
