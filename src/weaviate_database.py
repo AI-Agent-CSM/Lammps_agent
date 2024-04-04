@@ -37,10 +37,24 @@ def weaviate_generative_search(client, query: str,prompt: str, limit: int = 1, c
 class Client:
 #  A wrapper class for intereating with all the tools generated in here
     def __init__(self):
-        self.client = weaviate.connect_to_local(
-            headers={
-            "X-OpenAI-Api-Key": os.environ["OPENAI_APIKEY"]  # Replace with your inference API key
-                })
+        # self.client = weaviate.connect_to_local(
+        #     headers={
+        #     "X-OpenAI-Api-Key": os.environ["OPENAI_APIKEY"]  # Replace with your inference API key
+        #         })
+        
+
+                        # Set these environment variables
+        URL = os.getenv("YOUR_WCS_URL")
+        APIKEY = os.getenv("YOUR_WCS_API_KEY")
+                
+        # Connect to a WCS instance
+        self.client = weaviate.connect_to_wcs(
+            cluster_url=URL,
+            auth_credentials=weaviate.auth.AuthApiKey(APIKEY),
+                headers={
+        "X-OpenAI-Api-Key": os.environ["OPENAI_APIKEY"]  # Replace with your inference API key
+    }
+)
 
 
 

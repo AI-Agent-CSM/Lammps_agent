@@ -45,3 +45,11 @@ async def run_lammps_streaming(file: UploadFile = File(...)):
             yield process.stderr.read()
 
     return StreamingResponse(generate_output(), media_type="text/plain")
+
+
+
+
+@app.post("/feature-search/")
+async def feature_search(query: str, limit: int = 5):
+    context = WeaviateContextSearch(weaviate_client)
+    response = await context.search(query, limit)
