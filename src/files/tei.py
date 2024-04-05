@@ -10,9 +10,9 @@ from bs4 import BeautifulSoup
 from dateutil import parser
 from nltk.tokenize import sent_tokenize
 
-from files.article import Article
-from files.table import Table
-from files.text import Text
+from src.files.article import Article
+from src.files.table import Table
+from src.files.text import Text
 
 
 class TEI:

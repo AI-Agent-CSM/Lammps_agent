@@ -1,9 +1,16 @@
 
 from src.laamps_types import LammpsOptions
 from fastapi import FastAPI, File, UploadFile, HTTPException
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse 
+from pydantic import BaseModel
+import os
+import tempfile
+import aiofiles
 from typing import List
+from  src.weaviate_database import Client
+from src.context_search import WeaviateContextSearch
 import subprocess
+from src.api.grobid_client_python.grobid_client.grobid_client import GrobidClient
 app = FastAPI()
 
 
@@ -48,8 +55,53 @@ async def run_lammps_streaming(file: UploadFile = File(...)):
 
 
 
-
+class SearchSchema(BaseModel):
+    query: str
+    reference: str
+    limit: int
+    collection: str
+    properties: List[str]
+    references_properties: List[str]
 @app.post("/feature-search/")
-async def feature_search(query: str, limit: int = 5):
-    context = WeaviateContextSearch(weaviate_client)
-    response = await context.search(query, limit)
+async def context_search(search_schema: SearchSchema):
+
+
+    c = Client()
+    search = WeaviateContextSearch(c.client)
+    search_results = search.context_search(
+        search_schema.query, 
+        search_schema.reference, 
+        search_schema.limit, 
+        search_schema.collection, 
+        search_schema.properties, 
+        search_schema.references_properties
+    )
+    return search_results
+
+@app.post("/feature-search-streaming/")
+async def add_file_paper(file: UploadFile = File(...)):
+    # Create a temporary directory
+
+   
+    async with aiofiles.open("/home/cesar/Projects/Lammps_agent/test/temp.pdf", 'wb') as temp_file:
+        content = await file.read()
+        await temp_file.write(content)
+
+        # Initialize your client with its config
+        client = GrobidClient(config_path="/home/cesar/Projects/Lammps_agent/test/grobib_config.json")
+
+        # Process the directory
+        os.environ["OPENAI_APIKEY"] = "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"
+        os.environ["YOUR_WCS_URL"] =   "https://cesar-tzft90x3.weaviate.network"
+        os.environ["YOUR_WCS_API_KEY"] = "0g0lLsS19Y9jKGcK3RiASWmLMhcQ31i4nYUn"
+        output_file = "tmp_file.tei"
+        client.process(service="processFulltextDocument", input_path="/home/cesar/Projects/Lammps_agent/test", n=20)
+
+        c = Client()
+        c.ingest_data("/home/cesar/Projects/Lammps_agent/test/temp.grobid.tei.xml")
+    return {"filename": file.filename, "processed": True}
+
+
+
+# Example of Request
+

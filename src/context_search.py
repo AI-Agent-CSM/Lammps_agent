@@ -116,18 +116,26 @@ class WeaviateContextSearch:
             reviews = self.client.collections.get(collection)
             response = reviews.query.hybrid(
                 query=query,
-                query_properties=properties,
                 return_references=[
                 wvc.query.QueryReference(
                 link_on=reference,
-                return_properties=[references_properties]
+                return_properties=["uuid"]
                 )],
                 limit=limit
             )
 
             result = {}
+            properties = []
+            references_objects= []
+            for obj in response.objects:
+                 properties.append(obj.properties)
+                 obj_ref = []
+                 for ref_obj in obj.references[reference].objects:
+                      obj_ref.append(ref_obj.properties)
+                 references_objects.append(obj_ref)
 
-            result["properties"] = response.objects.properties
-            result["references"] = [response.objects.references[ref].objects for ref in references_properties]
+
+            result["properties"] = properties
+            result["references"] = references_objects
             
             return result

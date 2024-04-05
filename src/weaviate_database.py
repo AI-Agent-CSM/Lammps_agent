@@ -4,7 +4,7 @@ import weaviate.classes as wvc
 import argparse
 import uuid
 import os
-from files.tei import TEI
+from src.files.tei import TEI
 #  this is a file for ingesting XML Scientific data into Weaviate
 # By using a tools like Grobib for converting pdfs to XML/TEI format
 # to search in a smart way scientific papers.

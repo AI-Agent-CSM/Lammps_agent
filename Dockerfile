@@ -45,5 +45,10 @@ ENV PATH="/usr/src/app/lammps/build:${PATH}"
 RUN git clone https://github.com/AI-Agent-CSM/Lammps_agent.git
 RUN pip3 install fastapi uvicorn
 
+# Install Grobid client
+RUN git clone https://github.com/kermitt2/grobid_client_python &&\
+    cd grobid_client_python &&\
+    python3 setup.py install
+
 # Set the default command for the container
 CMD ["bash"]
