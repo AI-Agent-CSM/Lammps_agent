@@ -78,8 +78,6 @@ class Client:
     
     # Create a list of author entries for the database
         data_authors = [{"name": author.strip(), "affiliation": article.get("affiliations")} for author in authors_list]
-        print("asdfa")
-        print( article['sections'])
         # data_text_sections = [
         # {"name": section[0], "text": section["text"]} for section in article['sections']
         # ]
@@ -206,17 +204,17 @@ class Client:
         papers.config.add_reference(
         wvc.config.ReferenceProperty(name="hasAuthor",target_collection="Author"))
         papers.config.add_reference(
-            ReferenceProperty(name="hasSection", target_collection="TextSection")
-        )
+        ReferenceProperty(name="hasSection", target_collection="TextSection"))
         papers.config.add_reference(
-            ReferenceProperty(name="hasReferencedPaper", target_collection="Paper"))
+        ReferenceProperty(name="hasReferencedPaper", target_collection="Paper"))
         papers.config.add_reference(
-            ReferenceProperty(name="LinkPrediction", target_collection="Paper")
-        )
+        ReferenceProperty(name="LinkPrediction", target_collection="Paper"))
         
         authors = self.client.collections.get("Author")
         authors.config.add_reference(ReferenceProperty(name="hasPaper", target_collection="Paper"),)
         authors.config.add_reference(ReferenceProperty(name="LinkPrediction", target_collection="Author"),)
+
+
         sections = self.client.collections.get("TextSectionTemporal")
         sections.config.add_reference(ReferenceProperty(name="hasPaper", target_collection="Paper"),)
         sections.config.add_reference(ReferenceProperty(name="hasAuthor", target_collection="Author"))

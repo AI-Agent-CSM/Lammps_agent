@@ -73,9 +73,12 @@ class WeaviateContextSearch:
             return 0, set()
         
         return (intersection_score / union_score, intersection_keys)
+    
 
 
-
+    def jaccard_score_with_decay(self, node1_uuid, node2_uuid, collection: str, reference_property: str, depth: int, decay_factor=0.5):
+        references_node1 = self.fetch_references_with_decay(collection, node1_uuid, reference_property, depth, decay_factor=decay_factor)
+        references_node2 = self.fetch_references_with_decay(collection, node2_uuid, reference_property, depth, decay_factor=decay_factor)
 
 
 
@@ -100,7 +103,7 @@ class WeaviateContextSearch:
             for i in response:
                 for j in response:
                     if i.id != j.id:
-                        score, intersection = self.jaccard_score(i.id, j.id, collection, "hasReferencedPaper")
+                        score, intersection = self.jaccard_score(i.id, j.id, collection,depth, "hasReferencedPaper")
                         if score > score_threshold:
                              correlated.append((score, i)) 
 
@@ -109,5 +112,22 @@ class WeaviateContextSearch:
 
             correlated.sort(key=lambda x: x[0], reverse=True)   
 
-    def  context_search(self,query: str, prompt: str, limit: int, collection: str, properties: List[str]):
-         pass
+    def  context_search(self,query: str, reference: str, limit: int, collection: str, properties: List[str], references_properties: List[str]):
+            reviews = self.client.collections.get(collection)
+            response = reviews.query.hybrid(
+                query=query,
+                query_properties=properties,
+                return_references=[
+                wvc.query.QueryReference(
+                link_on=reference,
+                return_properties=[references_properties]
+                )],
+                limit=limit
+            )
+
+            result = {}
+
+            result["properties"] = response.objects.properties
+            result["references"] = [response.objects.references[ref].objects for ref in references_properties]
+            
+            return result
