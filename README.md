@@ -1,6 +1,6 @@
 # AI-Agent-CSM-UPRM-UND
 
-This project is performed in collaboration with academics from the University of Puerto Rico, Mayaguez and the University of Notre Dame. The goal of this project is to develop an AI agent specialized in computational soft matter research. It will use a vectorial data base, a restful api to protect the openai api key and will be hosted on a server.
+This project is performed in collaboration with academics from the University of Puerto Rico, Mayaguez and the University of Notre Dame. The goal of this project is to develop an AI agent specialized in computational soft matter research.
 
 This Streamlit app allows users to upload files, process them, run a LAMMPS simulation, and chat with an AI agent. The app utilizes various libraries and tools, including Streamlit, PyPDF2, docx, subprocess, OpenAI, Hugging Face, and more.
 
@@ -26,10 +26,9 @@ Ask questions about the files or run a LAMMPS simulation.
 
 1. PDF files are processed using PyPDF2 to extract text.
 2. DOCX files are processed using the python-docx library to extract text.
-3. CSV files are supported.
-4. Text Chunking
-5. Text is split into chunks to improve processing efficiency. This is done using a custom CharacterTextSplitter class.
-6. Vector Store Creation
+3. Text Chunking
+4. Text is split into chunks to improve processing efficiency. This is done using a custom CharacterTextSplitter class.
+5. Vector Store Creation
 
 ## LAMMPS Simulations
 
@@ -51,8 +50,7 @@ PyPDF2, docx (for file processing)
 
 ## Future Work
 
-- Integration with vector database ChromaDB to store and enrich with RAG the AI agent, and as a permanent storage in local machine which would later be modified into server hosted.
-- Develop API to protect OpenAI API Key and eliminate manual input of OpenAI API Key
+- Integration with vectorial database to store and enrich the RAG for the AI agent, and as a permanent storage.
 - Develop Front end sign up, login and for streamlit app
 
   
