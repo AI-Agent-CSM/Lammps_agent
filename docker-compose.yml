@@ -37,7 +37,7 @@ services:
             - capabilities: ["gpu"]
 
 
-  laamps:
+  lammps:
     build: .
     image: laamps_simulation  
     container_name: laamps

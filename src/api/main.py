@@ -7,8 +7,8 @@ import os
 import tempfile
 import aiofiles
 from typing import List
-from  src.weaviate_database import Client
-from src.context_search import WeaviateContextSearch
+from  src.weaviate_search.weaviate_database import Client
+from src.weaviate_search.context_search import WeaviateContextSearch
 import subprocess
 from src.api.grobid_client_python.grobid_client.grobid_client import GrobidClient
 app = FastAPI()
@@ -55,6 +55,8 @@ async def run_lammps_streaming(file: UploadFile = File(...)):
 
 
 
+
+
 class SearchSchema(BaseModel):
     query: str
     reference: str
@@ -64,8 +66,6 @@ class SearchSchema(BaseModel):
     references_properties: List[str]
 @app.post("/feature-search/")
 async def context_search(search_schema: SearchSchema):
-
-
     c = Client()
     search = WeaviateContextSearch(c.client)
     search_results = search.context_search(
@@ -91,9 +91,6 @@ async def add_file_paper(file: UploadFile = File(...)):
         client = GrobidClient(config_path="/home/cesar/Projects/Lammps_agent/test/grobib_config.json")
 
         # Process the directory
-        os.environ["OPENAI_APIKEY"] = "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"
-        os.environ["YOUR_WCS_URL"] =   "https://cesar-tzft90x3.weaviate.network"
-        os.environ["YOUR_WCS_API_KEY"] = "0g0lLsS19Y9jKGcK3RiASWmLMhcQ31i4nYUn"
         output_file = "tmp_file.tei"
         client.process(service="processFulltextDocument", input_path="/home/cesar/Projects/Lammps_agent/test", n=20)
 
