@@ -8,3 +8,7 @@ openai==0.12.6
 langchain==0.1.0
 faiss-cpu==1.7.4
 csv
+fastapi
+python-multipart
+weaviate
+ollama

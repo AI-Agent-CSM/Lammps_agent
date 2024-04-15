@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /data2/software/grobid-0.6.0/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Changing travel patterns in China during the early stages of the COVID-19 pandemic</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hamish</forename><surname>Gibbs</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Infectious Disease Epidemiology</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Centre for Mathematical Modelling of Infectious Diseases</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yang</forename><surname>Liu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Infectious Disease Epidemiology</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Centre for Mathematical Modelling of Infectious Diseases</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Carl</forename><forename type="middle">A B</forename><surname>Pearson</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Infectious Disease Epidemiology</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Centre for Mathematical Modelling of Infectious Diseases</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Christopher</forename><forename type="middle">I</forename><surname>Jarvis</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Infectious Disease Epidemiology</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Centre for Mathematical Modelling of Infectious Diseases</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Chris</forename><surname>Grundy</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Infectious Disease Epidemiology</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Billy</forename><forename type="middle">J</forename><surname>Quilty</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Infectious Disease Epidemiology</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Centre for Mathematical Modelling of Infectious Diseases</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Charlie</forename><surname>Diamond</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Infectious Disease Epidemiology</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Centre for Mathematical Modelling of Infectious Diseases</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Lshtm</forename><surname>Cmmid</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Covid-19</forename></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rosalind</forename><forename type="middle">M</forename><surname>Eggo</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Infectious Disease Epidemiology</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Centre for Mathematical Modelling of Infectious Diseases</orgName>
+								<orgName type="department" key="dep2">School of Hygiene and Tropical Medicine</orgName>
+								<address>
+									<addrLine>Keppel Street</addrLine>
+									<postCode>WC1E 7HT</postCode>
+									<settlement>London, London</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Changing travel patterns in China during the early stages of the COVID-19 pandemic</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1038/s41467-020-18783-0</idno>
+					<note>ARTICLE</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+
+		<encodingDesc>
+			<appInfo>
+				<application version="0.6.0" ident="GROBID-SDO" when="2020-11-04T17:34+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid-sdo"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>T he COVID-19 pandemic was first identified in Wuhan, China, in late 2019, and came to prominence in January 2020, and quickly spread within the country. January is also a major holiday period in China, and the 40-day period around Lunar New Year (LNY), or Chunyun, marks the largest annual human movement in the world, with major travel flows out of large cities <ref type="bibr" target="#b0">1</ref> . The purpose of this holiday travel is often to visit family members. The temporary displacement from residential addresses as a result of this holiday travel could last one to two weeks, up to a month. In 2019, nearly 3 billion individual journeys were made during Chunyun 2 . In 2020, Chunyun lasted from 10th January to 18th February 3 , with the first day of the LNY holidays on 24th January, followed by the first day of LNY on 25th January. This period coincided with the initial phase of the COVID-19 pandemic, and there has been speculation that holiday travel may have accelerated the propagation of COVID-19 both within China and internationally <ref type="bibr" target="#b3">4</ref> .</p><p>As part of initial efforts to contain the outbreak, the Chinese government announced a cordon sanitaire for the city of Wuhan, Hubei Province, starting on 23rd January 2020, one day before LNY holidays. This intervention restricted all non-essential movement into and out of the city. Services at airports, train stations, long-distance bus stations, and commercial ports were all suspended <ref type="bibr" target="#b4">5</ref> . Several studies have focused on assessing the effectiveness of the cordon sanitaire in Wuhan and other domestic travel restrictions in China in the context of COVID-19 control <ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref> . As other affected regions worldwide begin implementing similar travel restrictions <ref type="bibr" target="#b8">9</ref> , it is critical to understand human mobility patterns during the initial phase of the COVID-19 pandemic and their potential implications for other countries.</p><p>Out-going traffic from Wuhan was reduced by 89% within two days of the cordon sanitaire, according to data from Baidu Huiyan, an internet service company in China which uses location targeting to provide services to users. Baidu's Location Based Service (LBS) <ref type="bibr" target="#b9">10</ref> provides travel fluxes between prefectures in China during the annual Chunyun period to allow monitoring of movement of people using their services.</p><p>Previous analyses of Baidu movement data have used mobility data in transmission models <ref type="bibr" target="#b5">6,</ref><ref type="bibr" target="#b10">11</ref> , and others have examined the changes in patterns around Wuhan <ref type="bibr" target="#b6">7</ref> . A key unknown is to what extent the observed travel patterns in Wuhan and the rest of China were part of regular seasonal movements or were responses to the emerging epidemic or interventions against it, including the cordon sanitaire. Relying on a range of data scientific techniques, we examine human movement between Chinese prefectures on multiple geographic scales to provide a detailed examination of travel patterns during the early stages of the COVID-19 pandemic in China. We combine analyses of travel patterns from Wuhan, where the first COVID-19 epidemic was identified, and the first Chinese city to introduce large scale movement restrictions, with an analysis of the effects on the overall Chinese travel network. We further explore the relationship between travel patterns during the LNY holidays and regional healthcare capacity, to understand the impact of the human movements on the healthcare pressure caused by the spreading epidemic. This research is intended to provide a complete picture of the overall movement dynamics in China, and the public health implications of those movements, and has relevance to other countries implementing travel restrictions in an effort to limit the spread of COVID-19.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Human movement surrounding Wuhan, Hubei. We used daily prefecture-level movement data across China provided by Baidu Huiyan 10 to understand the spatial and temporal characteristics of movement patterns before, during and after the COVID-19 epidemic in Wuhan. Before the cordon sanitaire and during the initial phase of the COVID-19 epidemic, outbound travel volume from Wuhan was marked by an early-January peak, followed by a sharper second peak in the days before the LNY holidays ( <ref type="figure" target="#fig_1">Fig. 1a</ref>). The first peak was not observed in 2019, while the second peak was higher in 2020 than 2019. Because the start of Wuhan's cordon sanitaire and the beginning of LNY holidays were only one day apart, we refer only to LNY while describing our results.</p><p>Using k-means clustering of the timeseries of daily outbound travel from Wuhan to other prefectures, we identified four general temporal patterns that captured the travel patterns from Wuhan ( <ref type="figure" target="#fig_1">Fig. 1e</ref>, <ref type="table">Supplementary Table 1</ref>). Two of these clusters exhibited an increase in flow immediately before LNY (clusters A and B). Members of clusters A and B are geographically closer to Wuhan <ref type="figure" target="#fig_1">(Fig. 1d</ref>), with fewer residents and overall lower population density ( <ref type="figure" target="#fig_1">Fig. 1e</ref>, <ref type="table">Supplementary Tables 2-3</ref>). Cluster C exhibited two peaks around 7 and 22 January 2020, respectively. Cluster D showed one peak in early-January 2020, with no peak immediately preceding the LNY holidays. The findings are not sensitive to the number of clusters, (Supplementary Figs. <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref>.</p><p>The earliest detection of COVID-19 outside of Wuhan was 17th January 2020 ( <ref type="figure" target="#fig_1">Fig. 1b</ref>). By late March, over 90% of prefectures and province-level cities (further detail on administrative levels included in "Methods" section) in mainland China had at least one confirmed case of COVID-19. Most prefectures confirmed their first COVID-19 cases between 23rd and 26th January 2020.</p><p>Among the four clusters identified, cluster membership was associated with COVID-19 detection timing (p-value = 0.0004). Members of cluster D tended to have earlier COVID-19 detection. Such association persisted after adjusting for surveillance bias (p-value = 0.00002, see also <ref type="figure">Supplementary Fig. 6</ref>). Cluster membership was also associated with differences in prefecture-level population sizes ( <ref type="figure" target="#fig_1">Fig. 1c</ref>). Cluster D includes large population centres (e.g., Beijing, Shanghai, Guangzhou and Shenzhen) ( <ref type="figure" target="#fig_1">Fig. 1d</ref>). After the possible arrival of infected individuals from Wuhan, these highly connected cities could have contributed to the further spread of COVID-19 to places less directly connected to Wuhan. There were also a small number of prefectures that did not have any confirmed cases until 3 weeks after the cordon sanitaire in Wuhan.</p><p>We repeated the same analyses for other large cities in China, finding that despite the different numbers of clusters identified, the general patterns in movement flows observed in Wuhan were seen elsewhere in mainland China, with an early January peak in travel, and another increase in travel volume preceding LNY . The association between the population size of destinations and geographic distance, however, was less apparent. The early-January peak in Wuhan coincided with the beginning of winter break for university students in <ref type="bibr">China 12</ref> , approximately one million of whom study in Wuhan <ref type="bibr" target="#b12">13</ref> . Without information about the age composition of travellers at this time, we cannot provide a definite explanation of this observation.</p><p>There is anecdotal evidence implying an association between the announcement of a cordon sanitaire on 23rd January and temporarily increased outbound travel from Wuhan <ref type="bibr" target="#b13">14</ref> . This relationship, if true, could have hindered the effectiveness of the cordon sanitaire. Focusing on the six-day period preceding LNY, we compared the outbound travel patterns from Wuhan with the rest of mainland China using 2019 as the baseline. We used two variability metrics to investigate potential outbound travel surges: (1) a proportion-based matric, Eq. (3), that captures the relative between-year difference; and (2) an anomaly-based metric Eq. (4) that captures the deviation observed in 2020 compared to 2019. We found that although there is evidence of an increase in outbound travel from Wuhan during this period, a similar increase was also observed in many other prefectures. Wuhan was ranked 46 (top 13%) and 88 (top 24%) of 305, by the two metrics for the change in flow ( <ref type="figure" target="#fig_1">Supplementary Fig. 12</ref>).</p><p>Movement patterns across China. We explored the existence of hierarchical patterns of movement between differently-sized prefectures in mainland China, in an effort to understand differences in the connectivity between more and less populated prefectures during heightened travel during the LNY holidays. We divided prefectures and province-level cities into four population quartiles (i.e., Low (2000 to 1.44 million residents), Medium-low (1.45 to 2.96 million residents), Medium-high (2.98 to 4.90 million residents) and High (4.92 to 24.20 million residents). We found that the trends of inbound and outbound travel volume over time were relatively consistent across population quartiles ( <ref type="figure" target="#fig_1">Supplementary Fig. 13</ref>). The flow between all pairs of quartiles, measured in Baidu's migration index, increased prior to LNY and dropped sharply after Wuhan's cordon sanitaire, with an increase in within-quartile flow following 23rd January for all quartiles. However, the underlying composition of these in-and outbound travel flows differed substantially by population quartile ( <ref type="figure" target="#fig_2">Fig. 2)</ref>.</p><p>Before LNY, all regions saw increased inbound travel from highly populated prefectures ( <ref type="figure" target="#fig_2">Fig. 2a-d)</ref>. These changes were more marked in prefectures of lower population sizes. After LNY, the contribution to inbound travel by prefectures in the middle quartiles stabilised at higher levels compared to pre-LNY. As the volume of inbound travel recovered through February (Supplementary <ref type="figure" target="#fig_1">Fig. 15</ref>), the relative proportion of travellers from the most populated quartiles remained low. For outbound travel, a higher proportion of travellers from the most populated prefectures travelled to the middle quartiles before LNY, and a higher proportion from medium-sized prefectures travelled to low-population prefectures ( <ref type="figure" target="#fig_2">Fig. 2e</ref>-h). Travel volumes and distance patterns in Beijing, Shanghai, and Guangzhou began to return to normal more quickly than in Wuhan, and outbound travel generally recovered more after LNY ( <ref type="figure" target="#fig_1">Supplementary  Fig. 14)</ref>. This analysis of origin or destination locations revealed diverging hierarchical effects, rather than a simple cascading flow of travellers from larger to smaller population prefectures. Travellers from large prefectures more often travelled to other large or medium size prefectures; travellers from medium and small prefectures more often travelled between medium and small prefectures. Holiday travel immediately preceding LNY can be considered an indicator of long-term migration in China, as people travel back along their long-term migration route temporarily to visit family. The patterns we observed are consistent with the migration step effect along the urban hierarchy, in which geographic regions of similar population size exchange members more often <ref type="bibr" target="#b14">15,</ref><ref type="bibr" target="#b15">16</ref> . The divergence in hierarchical flow between high and low population prefectures means that middle population prefectures could play a key role in limiting the spread of COVID-19 to prefectures with fewer residents. Non-pharmaceutical interventions could target these mediumsized prefectures to prevent epidemics from reaching the relatively rural parts of China.   NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-020-18783-0 ARTICLE Healthcare capacity and COVID-19-related healthcare pressure. Before the LNY, the move away from larger population centres was also a move away from high healthcare capacity, measured by the number of Grade II and III hospitals per 100,000 residents ( <ref type="figure" target="#fig_3">Fig. 3</ref>). Prefectures with higher healthcare capacity had more outgoing than incoming travellers, and after LNY, travellers gradually returned to high healthcare capacity settings, but the overall geographic distribution of residents had not recovered to its pre-LNY conditions by 1st March 2020 ( <ref type="figure" target="#fig_3">Fig. 3a</ref>). This pattern persisted when we used an alternative healthcare capacity measure of the number of Grade II and III hospitals without adjusting for background population size ( <ref type="figure" target="#fig_1">Supplementary Fig. 16</ref>).</p><p>The movement observed was associated with COVID-19related healthcare pressure (see "Methods" section), a measure of confirmed cases compared with healthcare capacity <ref type="figure" target="#fig_3">(Fig. 3b</ref>). From the week before LNY to two weeks after, locations with low healthcare capacity experienced significantly higher pressure compared to locations with high healthcare capacity. Therefore Chunyun not only increased the chance of infection along mobility networks, but also shifted healthcare pressure caused by COVID-19 to regions with low healthcare capacity, an effect seen in other countries and during natural disasters <ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref> . Using the alternative healthcare capacity measure that considers number of hospitals only, we found similar relative associations (Supplementary <ref type="figure" target="#fig_1">Fig. 16</ref>).</p><p>Changes in overall travel network structure. In order to understand broad changes in the Chinese transportation network, we identified communities of highly connected prefectures and assessed the change in these communities during LNY and the introduction of local interventions in Chinese prefectures. We determined the community structure of the local travel network by calculating the daily modularity, Q, of the directed network 20 from 1st January to 1st March 2020. Each community (or module) has more connections within vs. between communities, and modularity is one method for measuring community structure in networks. The changing modularity provides a holistic view of transport throughout the country, highlighting macroscopic changes in the network, e.g., rerouting behaviour or increased linkages between new prefectures, as the movement network adjusted to travel restrictions in Wuhan.</p><p>Preceding the implementation of travel restrictions, there was a stable pattern of communities connected to large cities, with significant flows between communities <ref type="figure" target="#fig_4">(Fig. 4)</ref>. A lower Modularity value (Q) indicates weaker connections between prefectures within a community, or higher volumes of travel between different communities, rather than within the same communities. The low values of Q preceding LNY indicate a high volume of travel between communities, with increased interconnection of the movement network. Early January before LNY represents typical travel in China with flow between major population centres. During this period, travel within China was generally structured into well-defined communities, with high modularity, Q <ref type="figure" target="#fig_1">(Fig. 4, time point 1</ref>). Major cities had consistent, distinct communities which remained fairly steady even as outflows began to increase from major cities for LNY ( <ref type="figure" target="#fig_4">Fig. 4</ref>, time point 2; see Supplement 6 for full time series).</p><p>Immediately following the implementation of travel restrictions, we identified a marked peak in modularity where the Qvalue for Wuhan City increased, indicating that it temporarily became more integrated into the travel network ( <ref type="figure" target="#fig_3">Fig. 4a, time  point 3</ref>). This increase in modularity indicated relatively more connectivity between Wuhan and other communities, although there was decreased flow, so the actual number of travellers was much lower. This could also reflect the large movement of medical and other resources to Wuhan following the implementation of restrictions <ref type="bibr" target="#b20">21</ref> .</p><p>Overall connectivity decreased across China after the cordon sanitaire in Wuhan <ref type="figure" target="#fig_4">(Fig. 4, time point 4</ref>). This coincided with the implementation of disease control interventions in other prefectures, and a decrease in travel following LNY. Consistent with a country-wide policy of restricted movement, we did not find large rerouting or the increasing importance of other transport connections after the restrictions in Wuhan. This is critical as countries attempt to determine the efficacy of largescale movement restrictions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>The cordon sanitaire in Wuhan was an intensive travel restriction that completely stopped all non-essential incoming and outgoing traffic. Previous studies have demonstrated that it may have had low effectiveness in preventing or delaying transmission to other regions of mainland China during the early phase of the COVID-19 pandemic <ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b21">22</ref> . There is however potential for infectious disease control and prevention, especially when timeliness and the necessary scope of restrictions can be achieved <ref type="bibr" target="#b22">23</ref> . Travel restrictions will likely continue to be considered an important infectious disease intervention option against COVID-19 during the pandemic, and better understanding the mechanisms in play at different stages of travel restrictions is crucial to effective implementation.</p><p>We found a limited relationship between spatial proximity and epidemic spread where larger, distant populations detected their first COVID-19 cases earlier than smaller locations that are closer to Wuhan. We also observed a hierarchical divergence of movement between prefectures of different populations sizes, with larger prefectures more connected to other large prefectures, and smaller prefectures more connected to other small prefectures. Due to the highly connected modern mobility network, spatial proximity is not the only measure for closeness between two cities <ref type="bibr" target="#b23">24</ref> We found a limited relationship between spatial proximity and epidemic spread where larger, distant populations detected their first COVID-19 cases earlier than smaller locations that are closer to Wuhan. Due to the highly connected modern mobility network, spatial proximity is not the only measure for closeness between two cities <ref type="bibr" target="#b23">24</ref> . While planning for travel restrictions, either domestic or international, it may be worthwhile to consider other functional connectivity measures, such as human mobility studied here. Although outbreaks may appear to have single source location in the beginning, such as the case in Europe <ref type="bibr" target="#b24">25</ref>  Week in 2020 and week start date The changes in the healthcare pressure (log 10 scale) related to COVID-19 each week in low and high healthcare capacity prefectures. Healthcare capacity is measured by the number of hospitals per 100,000 residents (n low = 157, n high = 153). Healthcare pressure is measured by confirmed COVID-19 cases divided by healthcare capacity. Darker shade represents weeks when low healthcare capacity settings experienced significantly higher pressure than high healthcare capacity settings; lighter shade represents when differences are not statistically significant based on Mann-Whitney U test (5% type I error rate). The comparison for week 7 has p-value = 0.06. The boxplots in panel b display Median, IQR and whiskers +/− 1.5 times IQR.</p><p>immediate geographic surroundings may lead to missed opportunities for epidemic control.</p><p>The timing of LNY and the initial stage of the COVID-19 epidemic makes it difficult to untangle regular holiday travel from travel in response to the outbreak or to impending travel restrictions. The increased outflow from Wuhan that we observed was not unique to the city, as similar patterns of outflow were observed in a large number of other prefectures, and so likely represents increased holiday travel. We therefore did not find evidence of an association between the announcement of the cordon sanitaire and the number of outbound travellers leaving Wuhan. Data from other countries not confounded by holiday travel (e.g., France 26 ) may yield insights on public responses to travel restrictions. In addition, although the overall number of travellers leaving Wuhan was not exceptionally high before LNY, the composition of travellers may have changed, such as a shift from business to family travel, which could contribute to the spread of COVID-19 and could have implications for healthcare demand in destination locations <ref type="bibr" target="#b26">27</ref> . Finer resolution mobility data, including traveller characteristics such as age and occupation, could improve our understanding of the potential outbreak risk and the likely impacts of different interventions in the future.</p><p>Human mobility during Chunyun was marked by the general trend of people leaving large population centres for less populated locations. This is a move by the population away from locations with high healthcare capacity. During the peak of the epidemics in mainland China, areas with low healthcare capacity experienced significantly higher healthcare pressure related to COVID-19 compared to elsewhere. Temporarily mobilising resources such as medical personnel and equipment could aid epidemic control in places receiving a higher-than-normal number of travellers from places with potentially high COVID-19 prevalence, and thus could be evaluated as a potential public health intervention under similar circumstances <ref type="bibr" target="#b27">28</ref> .</p><p>The structure of the overall transportation network in China did not demonstrate compensatory responses to the cordon sanitaire. There was a brief alteration of the network structure immediately following the restrictions, before the network settled quickly back into the same relatively stable communities that existed before the restrictions, albeit at markedly lower flow. This implies that the overall transportation network did not undergo structural reorganisation as a result of Wuhan's cordon sanitaire and other regional travel restrictions. Short-term travel restrictions may therefore not incur lasting impacts on the mobility network, but assessing long-term impacts will require longer time-series analyses.</p><p>Mobility data from Baidu Huiyan has some limitations. For example, travel volumes were collected on an eight-hourly basis between each pair of prefectures and then aggregated to day-level and prefecture-level, which does not allow analysis of trips longer than a day. In a country the size of China, such trips may be relatively frequent. Pairwise travel patterns before 1 January 2020 are not available, which makes it challenging to determine baseline travel patterns. In addition, movement patterns from Baidu Huiyan reflect the movement of Baidu users, which may be a non-random subset of the general population in mainland China <ref type="bibr" target="#b28">29</ref> .</p><p>This study analysed the human mobility patterns around China during different stages of the local COVID-19 epidemics, from early Chunyun to Wuhan's cordon sanitaire and other travel restrictions. Using a range of techniques, we assessed the patterns of movement specific to Wuhan and the characteristics of the travel network throughout China considering the implications of changing travel patterns on the spread of COVID-19. We also explored the impact of travel patterns on Chinese prefectures, assessing the changes in healthcare pressure due to varying patterns of human mobility typically associated with LNY, which coincided with the early stages of the COVID-19 pandemic. Many countries have now implemented similar travel restrictions to reduce disease transmission. Understanding the implications of travel patterns before, during, and following travel restrictions is valuable for informing public health interventions, surveillance, and healthcare demand planning globally.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head><p>Geographic information. The geographic unit of analysis in this study is prefecture, which is administrative level two in mainland China, just below the province (level one). There are currently more than 360 prefecture-level units in China. However, the four provincial level cities (Beijing, Tianjin, Shanghai and Chongqing) are exceptions. They do not have a level two unit -level one directly manages level three administrative units (i.e., counties) in these locations <ref type="bibr" target="#b29">30</ref> . In this study, we analysed these province-level cities with prefectures for spatial completeness.</p><p>Mobility data. The mobility data is publicly available through Baidu Huiyan 10 , a web service that supports government agencies and businesses with big-data spatio-temporal analytics. Estimates are based on over 120 billion location-based service (LBS) enquiries each day from over 1.1 billion mobile devices, while taking into consideration more than 1.5 billion points of interests (POI). We obtained two variables directly from Baidu Huiyan: overall migration index (specific to each prefecture) and percentage of travellers arriving in or leaving specific locations (specific to each pair of prefectures). Note that migration index is a relative measure of the magnitude of human mobility, scaled relative to the total volume of movement across the network. Baidu movement flow index is collected in 8-h windows and is provided as origin-destination flows between pairs of prefectures. We further processed these data to produce symmetrical matrices of daily travel between all Chinese prefectures. We calculate the volume of human mobility between each pair of prefectures on each day between 1st January 2020 and 1st March 2020 using the following equation:</p><formula xml:id="formula_0">T ij;t ¼ F i;outbound;t p ij;outbound;t<label>ð1Þ</label></formula><p>where, for a given day, T ij,t is the volume of mobility from location i to location j on day t, F is the overall Baidu migration index with direction (inbound or outbound) at location i, and p ij;outbound is the proportion of all outbound travel that originated in i and ended in j. References to inbound and outbound travel are made in regards to a specific origin or destination location. We further validated this measure by assuming that inbound and outbound were equal, as:</p><formula xml:id="formula_1">T ij;t ¼ F i;outbound;t p ij;outbound;t ¼ F j;inbound;t p ij;inbound;t<label>ð2Þ</label></formula><p>where p ij;inbound;t is the proportion of all inbound travel that end in j and originate in i. Note that p ij;outbound;t and p ij;inbound;t are only available for the top 100 connected prefectures. In other words, p ij;outbound;t is only available for the top 100 destinations originating in i; p ij;inbound;t is only available for the 100 origins with the most travellers to j. We were not able to validate for T ij,t in the cases where p ij;outbound;t and p ij;inbound;t are not simultaneously available. Using data from Baidu Huiyan, we created a symmetric, 366 × 366 connectivity matrix for each day between 1 January 2020 and 1 Mar 2020 (61 days).</p><p>Demographic and healthcare system data. The 2018 population sizes were retrieved from the China Statistics Yearbook 31 . This metric accounts for migrant population, and thus is expected to may fluctuate during the holiday seasons. The geographic boundaries of prefectures and province-level cities were obtained from the Institute of Geographic Sciences and Natural Resources Research (Chinese Academy of Sciences) <ref type="bibr" target="#b32">32</ref> . The original source of daily confirmed incidence is the COVID-19 dashboard published by DXY.cn, which updates in near-real time based on government press releases 33 . In addition, the package 'nCoV2019' <ref type="bibr" target="#b34">34</ref> and 'DXY-COVID-19-Crawler' <ref type="bibr" target="#b35">35</ref> have reduced the time required for data gathering and data cleaning. Records of first case arrivals were cross-checked with news articles also found throughon DXY.cn <ref type="bibr" target="#b33">33</ref> . Information on the Grade II and III hospitals in China was retrieved from the National Health Commission <ref type="bibr" target="#b36">36</ref> and was then georeferenced using the non-commercial Amap API <ref type="bibr" target="#b37">37</ref> .</p><p>Time series analysis and surge evaluation. The patterns of movement out of Wuhan between 1st and 23rd January were analysed using cluster analysis of the magnitude-normalised timeseries of outflow over time. Outflow timeseries were selected using a threshold of journeys with an average flow index greater than 0.005 for the entire period. This threshold removed prefectures with negligible connectivity with the origin. In order to characterise the shape of the outflow from Wuhan, rather than the magnitude of certain outflows, we calculated the normalised flow, N, between origin (i) and destination (j) prefectures on each day (t), by dividing the outflow measured by the travel index T, by the total movement between the 1st and 23rd January 2020, as:</p><formula xml:id="formula_2">N ij;t ¼ T ij;t P t¼23 t¼1 T ij;t<label>ð3Þ</label></formula><p>We classified the time series using k-means clustering with four clusters <ref type="bibr" target="#b38">38</ref> . The number of clusters was chosen using a plot of average silhouette width against number of clusters, for between 4 and 12 clusters. The silhouette width decreased significantly at four clusters, and a similar number of time series were allocated to each cluster ( <ref type="figure" target="#fig_1">Supplementary Figs. 1-5</ref>). Furthermore, when using a greater number of clusters, we observed the same four overall temporal patterns with smaller differences between time series defining each cluster. We also observed an increasingly large number of clusters containing a small number of time series. Plots of the time series clustered using 2, 3, 4, 5 and 6 clusters are included in <ref type="figure" target="#fig_1">Supplementary Figs. 1-5</ref>. K-medioids, and Agglomerative Clustering were also explored as alternatives to K-means clustering. The different clustering methods did not result in substantial differences and identified similar patterns among outflow time series. We quantified the peak outflow from each prefecture in the five-day window before LNY (i.e., two to seven days before LNY, zero to five days before the cordon sanitaire). We used two parameters to characterise the magnitude of the change in outflow in 2020 compared to 2019 in each prefecture i:</p><formula xml:id="formula_3">V 1;i ¼ mean F i;τ 2020 mean F i;τ 2019 À 1<label>ð4Þ</label></formula><formula xml:id="formula_4">V 2;i ¼ mean F i;τ 2020 À mean F i;τ 2019 std F i;τ 2019<label>ð5Þ</label></formula><p>where F i,τ is the total Baidu outflow from prefecture i in the time period τ. τ in 2019 corresponds to 29 January-3 February 2019, and in 2020 corresponds to 18 January-23 January. The dates are different each year because they are aligned to the date of LNY in 2019 and 2020. The Relationship between First Case Detection and Cluster Membership: We explored the association between average population size and first case detection for prefectures in each cluster. There is potential confounding due to surveillance bias such that larger prefectures may detect COVID-19 cases earlier due to better public health infrastructure resulting in earlier and greater use of diagnostic tests. However, there is no intuitive indicator that can capture surveillance efforts, and therefore we used population size as a proxy for surveillance effort. The implicit assumption is that places with larger populations are more equipped for detecting COVID-19, which is supported because early testing capacity relied on biosafety level 2+ laboratories, which are only found in large hospitals and universities <ref type="bibr" target="#b39">39</ref> .</p><p>We adjust for this potential confounding effect using a linear regression model:</p><formula xml:id="formula_5">Detection date $ β o þ β 1 pop þ β 2 ðcluster membershipÞ ð 6Þ</formula><p>where pop represents the prefecture level population size as of 2018 and (Cluster membership) is a nominal unordered categorical variable with levels A through D.</p><p>Assessing the healthcare capacity and COVID-19-related healthcare pressure. In this study, prefecture-level healthcare capacity was measured by the number of Grade II and III hospitals per 100,000 residents. In mainland China, Grade II and III hospitals have 100-499 or 500+ hospital beds, respectively, and are equipped with ventilators <ref type="bibr" target="#b40">40</ref> . Thus, they are more important compared to community hospitals and clinics for COVID-19 management. Healthcare capacity in prefecture i (HC i ), therefore, can be expressed as:</p><formula xml:id="formula_6">HC i ¼ n hospital;i Pop residential;i<label>ð7Þ</label></formula><p>where n hospital,i is the number of Grade II and III hospitals in prefecture i, and Pop residential,i is the residential population of prefecture i. We use the size of the residential population in 2018 from the China Statistics Yearbook <ref type="bibr" target="#b28">29</ref> . HC i is stratified into high and low by taking the upper and lower 50% of prefectures with available data. Note that this metric cannot accurately reflect the prefecture level population sizes during LNY due to population movement. For example, the residential population size of Beijing is approximately 22 million, and over 10 million left the city for LNY <ref type="bibr" target="#b41">41</ref> . Healthcare pressure in prefecture i during week w (Hp i,w ) was calculated by dividing weekly confirmed COVID-19 cases 31 by the healthcare capacity:</p><formula xml:id="formula_7">HP i;w ¼ n confirmed;w HC i<label>ð8Þ</label></formula><p>where n confirmed,w is the number of confirmed COVID-19 cases during week w. We also performed a sensitivity analysis on the metric and considered an alternative measure of healthcare capacity that did not adjust for the background residential population sizes:</p><formula xml:id="formula_8">HC i ¼ n hospital;i<label>ð9Þ</label></formula><p>The distributions of healthcare pressure were non-Gaussian. We therefore used non-parametric one-tailed Mann-Whitney U tests to compare the differences of healthcare pressure between low and high healthcare capacity settings. The null hypothesis was that the healthcare pressures in low healthcare capacity settings are comparable to that in high healthcare capacity settings; the alternative hypothesis was that healthcare pressures in low healthcare capacity settings are higher than those in high healthcare capacity settings (n1 = 157, n2 = 153). This test was repeated for each week from week three to nine (i.e., starting on 15 Jan 2020). Results were verified using two-tailed Mann-Whitney U tests, as well as one-tailed Mann-Whitney U tests with the opposite null hypotheses.</p><p>Network analysis. Using the weighted movement flows between locations, we calculated community structure in the network using the Leiden algorithm <ref type="bibr" target="#b19">20</ref> . The Leiden algorithm maximises the modularity, Q, on directed, weighted, time sliced NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-020-18783-0 ARTICLE networks with an inter-slice weighting of 10 −5 , which is the order of magnitude of minimum intra-slice weight across all times <ref type="bibr" target="#b42">42</ref> . Modularity is a metric of withincommunity vs. between-community connectivity, and the algorithm detects communities by optimising the within vs. between, thereby assigning nodes to communities. Using the community structure from this algorithm, we identified the relative contributions to modularity, Q, of 4 key communities: the community containing Wuhan prefecture, and then the communities of four other major cities in China: Beijing, Shanghai, Guangzhou, and Shenzhen. The latter two were always assigned to the same community and are marked together in <ref type="figure" target="#fig_4">Fig. 4</ref>. We presented 4 snapshots of communities in the travel network, but all are shown in Supplementary <ref type="figure" target="#fig_1">Fig. 17</ref>, and the spatial locations of those networks in <ref type="figure" target="#fig_1">Supplementary  Fig. 18</ref>.</p><p>Distance Kernels. To determine how the relationship between distance and travel flow changed over Chunyun and in response to the cordon sanitaire, we calculated the frequency of journeys of at least distance n kilometres, for n up to the maximum distance 4185 km, on each day of the study period. These plots are shown for Beijing, Guangzhou, Shanghai and Wuhan, for both inflow and outflow in Supplementary <ref type="figure" target="#fig_1">Fig. 14.</ref> Sensitivity analyses. We repeated clustering of temporal traveller flow time series to validate the method for assessing travel flux out of Wuhan between January 1st and January 23rd. Employing the same method of thresholding prefectures with little connectivity, the volume of travel to individual destination locations over time were normalised by dividing by the total flow along each route in the period. These normalised time series were then clustered using the same k-means clustering procedure discussed above. The number of clusters was determined using a silhouette plot in order to isolate the dominant temporal patterns of traveller movement to individual destinations.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 1</head><label>1</label><figDesc>Travel patterns between Wuhan and other connected prefectures. The identified patterns of outbound travel from Wuhan: (a) the daily total outbound travel from Wuhan in 2019 and 2020; (b) timing of first case detection stratified by clusters of similar time series; (c) distribution of resident population sizes of individual prefectures (points); (d) map of prefectures and province-level cities showing the spatial distribution of timeseries clusters; (e) outbound travel trends from Wuhan to the most connected prefectures in China, stratified by clusters with similar time series. The clusters are defined by k-means clustering of the timeseries of outbound travel volume (see "Methods" section). For clusters in panels b and c, n = 22 (Cluster A), 34 (Cluster B) 33 (Cluster C), 36 (Cluster D). Boxplots in panels b and c display Median, IQR, and whiskers +/− 1.5 times IQR. The timeseries have been normalised by the total flow of each, to allow comparison of the profile. Inset pie charts show the total travel flux out of Wuhan prefecture by destinations in each cluster. The red dashed lines in panels a, b and e mark the beginning of LNY holidays. The colours in panels b, c, d and e indicate cluster membership (Cluster A, B, C or D).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 2</head><label>2</label><figDesc>15 Mar 01 Jan 01 Jan 15 Feb 01 Feb 15 Mar 01 Jan 01 Jan 15 Feb 01 Feb 15 Mar 01 Jan 01 Jan 15 Feb 01 Contribution of each population quartile to inbound and outbound travel. Shading marks the population quartile with highest population quartiles in the lightest shade. The red dashed line shows the first day of LNY (25th January 2020). The figure displays the proportion of travel from all quartiles to High (a), Medium-high (b), Medium-low (c) and Low (d) population quartiles, as well as the proportion of travel to all quartiles originating from High (e), Medium-high (f), Medium-low (g) and Low (h) population quartiles.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 3</head><label>3</label><figDesc>Healthcare service availability and COVID-19-related healthcare pressure. a The changes in traveller volume before (blue) and after (red) LNY. Net change is defined as inbound migration index minus outbound migration index. Thus, a negative change indicates more travellers leave than arrive while a positive value indicates more travellers arrive than leave. A solid line indicates the median level of healthcare capacity. b</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 4</head><label>4</label><figDesc>Community structure of the movement network. Community structure is measured through modularity, a metric defining the strength of connections within vs. between communities. The members of communities are determined by the Leiden algorithm<ref type="bibr" target="#b19">20</ref> . a The time series of total and subcommunity modularity, and (b) snapshots of the community networks on days before and after the cordon sanitaire. The communities for Wuhan (red) and several major cities (blues) are highlighted in a and b in both the community and edges between communities. The time series shows working week (grey bars; missing after nation-wide social distancing measures), as well as the initiation and enforcement of restrictions in Wuhan (red gradient) over 23rd to 24th January. The communities (circles) are sized according to within-community migration index, while their connections are sized according to their between-community migration index.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>c</head><label></label><figDesc>Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan Wuhan</figDesc><table><row><cell>Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province Hubei Province</cell></row></table><note></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>, focussed travel restrictions around epicentres and their</figDesc><table><row><cell></cell><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Net change by migration index</cell><cell>−10</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>−20</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0.03</cell><cell></cell><cell>0.10</cell><cell>0.30</cell><cell></cell><cell>1.00</cell><cell>3.00</cell><cell>0.03</cell><cell></cell><cell>0.10</cell><cell>0.30</cell><cell></cell><cell>1.00</cell><cell>3.00</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="4">Number of hospitals per 100,000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell cols="5">Low access to health care setting</cell><cell></cell><cell></cell><cell cols="5">High access to healthcare setting</cell></row><row><cell cols="2">10,000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>1000</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>100</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>10</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>3</cell><cell>4</cell><cell>5</cell><cell>6</cell><cell>7</cell><cell>8</cell><cell>9</cell><cell>3</cell><cell>4</cell><cell>5</cell><cell>6</cell><cell>7</cell><cell>8</cell><cell>9</cell></row><row><cell></cell><cell>01−15</cell><cell>01−22</cell><cell>01−29</cell><cell>02−05</cell><cell>02−12</cell><cell>02−19</cell><cell>02−26</cell><cell>01−15</cell><cell>01−22</cell><cell>01−29</cell><cell>02−05</cell><cell>02−12</cell><cell>02−19</cell><cell>02−26</cell></row></table><note></note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot">NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-020-18783-0</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot">NATURE COMMUNICATIONS | (2020) 11:5012 | https://doi.org/10.1038/s41467-020-18783-0 | www.nature.com/naturecommunications</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot">Reporting summary. Further information on research design is available in the Nature Research Reporting Summary linked to this article.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot">© The Author(s) 2020</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>The following funding sources are acknowledged as providing funding for the named authors. This research was partly funded by the Bill and Melinda Gates Foundation  </p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data availability</head><p>All data used in this study are publicly available. Analyses were conducted using a symmetrical matrix of movement flux data collected from the Qianxi Baidu 2020 movement map: https://qianxi.baidu.com/. The processed movement dataset is included in a publicly accessible repository: https://github.com/yangclaraliu/ pandemic_travel_china. This research also relies on Covid-19 case count data and prefecture level hospital resource data from China, C. D. C. Public Health Science Data Centre, as well as prefecture level population data from China Statistical Yearbook 2018. Covid-19 case count data, prefecture level hospital resource data, and prefecture level population data require applications for use.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Code availability</head><p>Code is publicly available in a Github repository, https://github.com/yangclaraliu/ pandemic_travel_china.</p><p>Received: 8 May 2020; Accepted: 3 September 2020;</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions</head><p>H.G., Y.L., R.M.E., conceived the methods in the study. H.G., Y.L., C.I.J. and C.A.B.P. implemented the analysis and generated the figures with input from B.J.Q., C.D., R.M.E. and C.G. All authors interpreted the findings and prepared the manuscript. All authors reviewed the manuscript and approved the final version for submission.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests</head><p>The authors declare no competing interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Additional information</head><p>Supplementary information is available for this paper at https://doi.org/10.1038/s41467-020-18783-0.</p><p>Correspondence and requests for materials should be addressed to H.G. or Y.L.</p><p>Peer review information Nature Communications thanks Adam Dennett and the other, anonymous reviewer(s) for their contribution to the peer review of this work. Peer review reports are available.</p><p>Reprints and permission information is available at http://www.nature.com/reprints</p><p>Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p><p>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this license, visit http://creativecommons.org/ licenses/by/4.0/.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Tracing the largest seasonal migration on earth</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Gu</surname></persName>
+		</author>
+		<ptr target="https://arxiv.org/abs/1411.0983" />
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">This Year&apos;s Spring Festival 2.99 Billion Passengers Will Travel</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>An</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Xinhua Net</title>
+		<imprint>
+			<date type="published" when="2019" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Go Home Early on the First Day of the Spring Festival</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Hao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Xinhua Net</title>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The impact of mass gatherings and holiday traveling on the course of an influenza pandemic: a computational model</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Keskinocak</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">L</forename><surname>Swann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Public Health</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">778</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Diary of Pneumonia|January 23: Wuhan is fully &apos;closing the city&apos; to fully contain the epidemic</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Caixin</title>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Effect of non-pharmaceutical interventions to contain COVID-19 in China</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">585</biblScope>
+			<biblScope unit="page" from="410" to="413" />
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">The effect of human mobility and control measures on the COVID-19 epidemic in China</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">U G</forename><surname>Kraemer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">368</biblScope>
+			<biblScope unit="page" from="493" to="497" />
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">An investigation of transmission control measures during the first 50 days of the COVID-19 epidemic in China</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Tian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">368</biblScope>
+			<biblScope unit="page" from="638" to="642" />
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">COVID-19 outbreak response, a dataset to assess mobility changes in Italy following national lockdown</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Pepe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Data</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">230</biblScope>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Baidu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Baidu Huiyan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Map</surname></persName>
+		</author>
+		<ptr target="https://huiyan.baidu.com/" />
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">The effect of travel restrictions on the spread of the 2019 novel coronavirus (COVID-19) outbreak</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Chinazzi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">368</biblScope>
+			<biblScope unit="page" from="395" to="400" />
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Notice about Winter Vacation in 2020</title>
+		<ptr target="https://www.whu.edu.cn/info/1118/13775.htm" />
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+		<respStmt>
+			<orgName>Wuhan University</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Wuhan Has Attracted 700,000 University Graduates in the past Two Years</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Feng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Xinhua Net</title>
+		<imprint>
+			<date type="published" when="2018" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Million Left Wuhan before Lockdown, 1,000 New Virus Cases Expected</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Zhuang</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020" />
+			<publisher>South China Morning Post</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Migration up and down the urban hierarchy and across the life course</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">A</forename><surname>Plane</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">J</forename><surname>Henrie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">J</forename><surname>Perry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="15313" to="15318" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Migration destinations in the urban hierarchy in China: evidence from Jiangsu</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Popul. Space Place</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">2083</biblScope>
+			<date type="published" when="2018" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Improved response to disasters and outbreaks by tracking population movements with mobile phone network data: a post-earthquake geospatial study in Haiti</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Bengtsson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Thorson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Garfield</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Von Schreeb</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Med</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">1001083</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Predictability of population displacement after the 2010 Haiti earthquake</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Bengtsson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Holme</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="11576" to="11581" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Le</forename><surname>Nestour</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Moscoviz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename></persName>
+		</author>
+		<ptr target="https://www.cgdev.org/blog/five-findings-new-phone-survey-senegal" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">From Louvain to Leiden: guaranteeing well-connected communities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">A</forename><surname>Traag</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Waltman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">J</forename><surname>Van Eck</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="1" to="12" />
+			<date type="published" when="2019" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">346 Medical teams of 42,000 people arrived in Hubei to fight the epidemic</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Xiong</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>Paper (2020</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Risk for transportation of Coronavirus Disease from Wuhan to other cities in China</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">U</forename><surname>Zhanwei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Emerg. Infect. Dis</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">1049</biblScope>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Human mobility networks, travel restrictions, and the global spread of 2009 H1N1 pandemic</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Bajardi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">16591</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Effective distances for epidemics spreading on complex networks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Iannelli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Koher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Brockmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Hövel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><forename type="middle">M</forename><surname>Sokolov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="page">12313</biblScope>
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Italy&apos;s coronavirus epicenter, life is on hold</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Grosso</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Politico</title>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">More than one million people fled Paris as coronavirus lockdown began. The Independent</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Tidman</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Contact, travel, and transmission: the impact of winter holidays on influenza dynamics in the United States</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Ewing</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">C</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Viboud</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Bansal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Infect. Dis</title>
+		<imprint>
+			<biblScope unit="volume">215</biblScope>
+			<biblScope unit="page" from="732" to="739" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Strengthening the health system response to COVID-19 Recommendations for the WHO European Region Policy brief</title>
+		<ptr target="http://www.euro.who.int/__data/assets/pdf_file/0003/436350/strengthening-health-system-response-COVID-19.pdf" />
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">Analysis of the development of mobile phone Baidu in 2017</title>
+		<ptr target="https://www.chyxx.com/industry/201804/625950.html" />
+		<imprint>
+			<date type="published" when="2018" />
+		</imprint>
+	</monogr>
+	<note>China Industry Information Central</note>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Ministry of Civil Affairs of the People&apos;s Republic of China</title>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+				<ptr target="http://www.mca.gov.cn/article/sj/xzqh/2020/" />
+		<title level="m">Administrative Division Code</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">National Bureau of Statistics of China. Annual Data</title>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<ptr target="http://www.igsnrr.ac.cn/" />
+	</analytic>
+	<monogr>
+		<title level="j">Chinese Academy of Sciences. Institute of Geographic Resources</title>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">COVID-19 Global Pandemic Real-time report</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Dxy</surname></persName>
+		</author>
+		<ptr target="https://ncov.dxy.cn/ncovh5/view/pneumonia" />
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Yu</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">DXY-COVID-19-Crawler</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Lin</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">Public Health Science Data Center</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Cdc</forename><surname>China</surname></persName>
+		</author>
+		<ptr target="http://www.phsciencedata.cn/Share/" />
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<ptr target="https://lbs.amap.com/" />
+	</analytic>
+	<monogr>
+		<title level="j">Alibaba. I. B. S. Amap API</title>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Bishop</forename><surname>Christopher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognition and Machine Learning</title>
+		<imprint>
+			<date type="published" when="2006" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">From 200 to 10,000 a day-how did Wuhan&apos;s PCR testing capacity for COVID-19 increased 50 folds? China Times</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Cui</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">China National Health Commission. Hospital Classification and Management Protocol</title>
+		<imprint>
+			<date type="published" when="1989" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title level="m" type="main">Eight million people has yet to return to Beijing, train stations are taking measures against COVID-19. 21 Century Business Herald</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Wu</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2020" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Community structure in time-dependent, multiscale, and multiplex networks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">J</forename><surname>Mucha</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Richardson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Macon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Porter</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J.-P</forename><surname>Onnela</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">328</biblScope>
+			<biblScope unit="page" from="876" to="878" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">This research was partly funded by the National Institute for Health Research (NIHR) using UK aid from the UK Government to support global health research. The views expressed</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Petra</forename><surname>Sophie R Meakin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Samuel</forename><surname>Klepac</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rachel</forename><surname>Clifford</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sam</forename><surname>Lowe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Joel</forename><surname>Abbott</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jon</forename><forename type="middle">C</forename><surname>Hellewell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Akira</forename><surname>Emery</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Georgia</forename><forename type="middle">R</forename><surname>Endo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Adam</forename><forename type="middle">J</forename><surname>Gore-Langton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Kucharski</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Simon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Amy</forename><surname>Procter</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">;</forename><surname>Gimma</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>James</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Munday</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Arminder</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Timothy</forename><forename type="middle">W</forename><surname>Deol</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Megan</forename><surname>Russell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Stefan</forename><surname>Auzenbergs</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Flasche</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M G J</forename><surname>Rein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Graham</forename><surname>Houben</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Stéphane</forename><surname>Medley</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Hué</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">This research was partly funded by the National Institute for Health Research (NIHR) using UK aid from the UK Government to support global health research</title>
+		<editor>B.J.Q., C.D., Y.L.). UK DHSC/UK Aid/NIHR (ITCRZ 03010: H.P.G., C.G.</editor>
+		<meeting><address><addrLine>Sebastian Funk, Kathleen O&apos;Reilly, Oliver Brady, Thibaut Jombart, Mark Jit, Kiesha Prem, W John Edmunds, Nikos I Bosse, Fiona Yueqian Sun, C Julian Villabona-Arenas, Gwenan M Knight, Nicholas G. Davies, Matthew Quaife, James W Rudge, Damien C Tully, David Simons, Alicia Rosello, Quentin J Leclerc, Emily S Nightingale, Eleanor M Rees, Anna M Foss, Katherine E. Atkins, Kevin van Zandvoort</addrLine></address></meeting>
+		<imprint>
+			<publisher>Alan Turing Institute (A.E</publisher>
+		</imprint>
+	</monogr>
+	<note>The views expressed in this publication are those of the author(s) and not necessarily those of the NIHR or the UK Department of Health and Social Care (16/137/109:. in this publication are those of the author(s) and not necessarily those of the NIHR or the UK Department of Health and Social Care: M.J.; NTD Modelling Consortium OPP1184344: G.M.; OPP1180644: SRP</note>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title level="m" type="main">This research was partly funded by the Global Challenges Research Fund (GCRF) project &apos;RECAP&apos; managed through RCUK and ESRC</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Ma</forename><forename type="middle">)</forename><surname>Ko&amp;apos;r</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Dfid/Wellcome</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Trust</surname></persName>
+		</author>
+		<idno>OPP1183986: ESN; OPP1191821</idno>
+		<editor>101003688: K.P., P.K., W.J.E.</editor>
+		<imprint>
+			<biblScope unit="volume">757699</biblScope>
+		</imprint>
+	</monogr>
+	<note>This project has received funding from the European Union&apos;s Horizon 2020 research and innovation programme-project EpiPose. ES/P010873/1: A.G., T.J.). Nakajima Foundation (A.E.</note>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Authors of this research receive funding from UK Public Health Rapid Support Team funded by the United Kingdom Department of Health and Social Care</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">M R</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">R G L</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Q</forename><forename type="middle">J</forename></persName>
+		</author>
+		<idno>HPRU-2012-10096: T.J.; PR-OD-1017-20002</idno>
+	</analytic>
+	<monogr>
+		<title level="m">NIHR200929; European Commission (101003688: M.J.). Royal Society (Dorothy Hodgkin Fellowship: R.L.; RP\EA \180004: P.K.). UK MRC (LID DTP MR/N013638/1</title>
+		<editor>A.J.K., T.W.R.</editor>
+		<editor>206471/Z/17/Z: O.J.B.</editor>
+		<editor>208812/Z/17/Z: S.C., SFlasche</editor>
+		<editor>210758/Z/18/Z: J.D.M., J.H., N.I.B., S.A., S.Funk</editor>
+		<imprint>
+			<date type="published" when="206250" />
+		</imprint>
+	</monogr>
+	<note type="report_type">T.J.). Wellcome Trust</note>
+	<note>A.R.).. No funding (A.K.D., A.M.F., D.C.T., S.H.</note>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+				<title level="m">LSHTM CMMID COVID-19 working group</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Rein M. G. J. Houben</title>
+		<editor>David Simons 2 , Amy Gimma 2 , Quentin J. Leclerc 2 , Megan Auzenbergs 2 , Rachel Lowe 2 , Kathleen O&apos;Reilly 2 , Matthew Quaife 2 , Joel Hellewell 2 , Gwenan M. Knight 2 , Thibaut Jombart 2 , Petra Klepac 2 , Simon R. Procter 2 , Arminder K. Deol 2 , Eleanor M. Rees 2 , Stefan Flasche 2 , Adam J. Kucharski 2 , Sam Abbott 2</editor>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+	<note>Fiona Yueqian Sun</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

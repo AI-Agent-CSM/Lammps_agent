@@ -1,0 +1,24 @@
+units lj             # Set units to Lennard-Jones units
+atom_style atomic    # Define atomic style
+
+lattice fcc 0.8442   # Define lattice and lattice constant
+region box block 0 10 0 10 0 10 # Define simulation box
+create_box 1 box     # Create simulation box with 1 atom type
+create_atoms 1 box   # Fill box with atoms in lattice arrangement
+
+mass 1 1.0           # Set mass of atom type 1
+
+velocity all create 1.44 87287 loop geom # Initialize velocities
+
+pair_style lj/cut 2.5           # Set Lennard-Jones potential with cutoff
+pair_coeff 1 1 1.0 1.0 2.5      # Set coefficients for LJ potential
+
+neighbor 0.3 bin                # Set neighbor list style and skin distance
+neigh_modify delay 0 every 20 check yes # Modify neighbor list parameters
+
+fix 1 all nve                    # Integrate equations of motion
+
+thermo 100                       # Output thermodynamic info every 100 steps
+thermo_style custom step temp etotal # Customize thermodynamic output
+
+run 1000  

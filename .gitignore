@@ -1,0 +1,4 @@
+src/__pycache__/
+src/files/__pycache__/
+test/
+src/api/__pycache__/
