@@ -43,9 +43,12 @@ ENV PATH="/usr/src/app/lammps/build:${PATH}"
 # RUN pip3 install lammps-cythonhttps://github.com/AI-Agent-CSM/Lammps_agent.git
 
 RUN git clone https://github.com/AI-Agent-CSM/Lammps_agent.git
+WORKDIR /usr/src/app/lammps/build/Lammps_agent
 RUN pip3 install fastapi uvicorn
+RUN pip3 install -r requirements.txt
 
 # Install Grobid client
+WORKDIR /usr/src/app/lammps/build/Lammps_agent/src
 RUN git clone https://github.com/kermitt2/grobid_client_python &&\
     cd grobid_client_python &&\
     python3 setup.py install
