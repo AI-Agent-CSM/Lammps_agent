@@ -38,17 +38,21 @@ RUN make install
 # Set the path to the LAMMPS executable
 ENV PATH="/usr/src/app/lammps/build:${PATH}"
 
-# Optional: Install Python packages for interacting with LAMMPS (like PyLammps)
-# RUN pip3 install numpy
-# RUN pip3 install lammps-cythonhttps://github.com/AI-Agent-CSM/Lammps_agent.git
-
+WORKDIR /
 RUN git clone https://github.com/AI-Agent-CSM/Lammps_agent.git
-RUN pip3 install fastapi uvicorn
-
+RUN apt install python3.12-venv -y
+# Create a virtual environment and install dependencies
+RUN python3 -m venv venv \
+    && . venv/bin/activate \
+    && cd Lammps_agent \
+    && pip3 install -r requirements.txt
 # Install Grobid client
+WORKDIR /Lammps_agent/src/api
 RUN git clone https://github.com/kermitt2/grobid_client_python &&\
     cd grobid_client_python &&\
     python3 setup.py install
+
+WORKDIR /Lammps_agent/
 
 # Set the default command for the container
 CMD ["bash"]
