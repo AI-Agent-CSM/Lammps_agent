@@ -5,6 +5,7 @@ python-dotenv==0.19.1
 PyPDF2==1.26.0
 python-docx==1.1.0
 openai
+openai
 langchain==0.1.0
 fastapi
 python-multipart

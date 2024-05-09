@@ -13,3 +13,6 @@
         }
     ]
 }
+
+
+# CMD ["uvicorn Lammps_agent.src.api.main:app --host 0.0.0.0 --port 3005 --reload"]

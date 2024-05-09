@@ -1,5 +1,5 @@
 
-from src.laamps_types import LammpsOptions
+from ..laamps_types import LammpsOptions
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import StreamingResponse 
 from pydantic import BaseModel
@@ -7,10 +7,12 @@ import os
 import tempfile
 import aiofiles
 from typing import List
-from  src.weaviate_search.weaviate_database import Client
-from src.weaviate_search.context_search import WeaviateContextSearch
+from  ..weaviate_search.weaviate_database import Client
+from ..weaviate_search.context_search import WeaviateContextSearch
 import subprocess
-from src.api.grobid_client_python.grobid_client.grobid_client import GrobidClient
+from tempfile import NamedTemporaryFile
+from fastapi.responses import JSONResponse
+from ..grobid_client_python.grobid_client.grobid_client import GrobidClient
 app = FastAPI()
 
 
@@ -78,26 +80,31 @@ async def context_search(search_schema: SearchSchema):
     )
     return search_results
 
-@app.post("/feature-search-streaming/")
+@app.post("/add-file-paper/")
 async def add_file_paper(file: UploadFile = File(...)):
-    # Create a temporary directory
+    # Create a temporary file for the uploaded PDF
+    with NamedTemporaryFile(delete=False, suffix=".pdf") as temp_pdf:
+        # Async write to temporary file
+        async with aiofiles.open(temp_pdf.name, 'wb') as out_file:
+            content = await file.read()
+            await out_file.write(content)
 
-   
-    async with aiofiles.open("/home/cesar/Projects/Lammps_agent/test/temp.pdf", 'wb') as temp_file:
-        content = await file.read()
-        await temp_file.write(content)
+        # Initialize the Grobid client with its configuration
+        client = GrobidClient(config_path="config/grobib_config.json")
+        if not os.path.exists("result"):
+            os.mkdir("./result")
 
-        # Initialize your client with its config
-        client = GrobidClient(config_path="/home/cesar/Projects/Lammps_agent/test/grobib_config.json")
 
-        # Process the directory
-        output_file = "tmp_file.tei"
-        client.process(service="processFulltextDocument", input_path="/home/cesar/Projects/Lammps_agent/test", n=20)
+        output_path = "./result"
+        client.process(service="processFulltextDocument", input_path=temp_pdf.name, output=output_path, n=1)
+        # Assume Grobid writes output to a specific file within 'output_path'
+        output_file = f"{output_path}/output.tei.xml"
 
+        # Ingest data - Assuming 'Client' is previously defined and works as intended
         c = Client()
-        c.ingest_data("/home/cesar/Projects/Lammps_agent/test/temp.grobid.tei.xml")
-    return {"filename": file.filename, "processed": True}
+        c.ingest_data(output_file)
 
+    return JSONResponse(content={"filename": file.filename, "processed": True})
 
 
 # Example of Request
