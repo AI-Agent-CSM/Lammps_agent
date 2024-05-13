@@ -42,8 +42,9 @@ services:
     image: laamps_simulation  
     container_name: laamps
     ports:
-     - "3005:3005"
-  
+      - "3005:3005"
+    stdin_open: true # Keeps the stdin open even if not attached
+    tty: true # Allocates a pseudo-TTY
 
   
 

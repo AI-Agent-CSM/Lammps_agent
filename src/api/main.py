@@ -12,7 +12,7 @@ from ..weaviate_search.context_search import WeaviateContextSearch
 import subprocess
 from tempfile import NamedTemporaryFile
 from fastapi.responses import JSONResponse
-from ..grobid_client_python.grobid_client.grobid_client import GrobidClient
+from ..api.grobid_client_python.grobid_client.grobid_client import GrobidClient
 app = FastAPI()
 
 
