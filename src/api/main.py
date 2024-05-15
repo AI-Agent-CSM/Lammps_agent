@@ -1,6 +1,6 @@
 
 from ..laamps_types import LammpsOptions
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, Header, HTTPException
 from fastapi.responses import StreamingResponse 
 from pydantic import BaseModel
 import os
@@ -67,21 +67,25 @@ class SearchSchema(BaseModel):
     properties: List[str]
     references_properties: List[str]
 @app.post("/feature-search/")
-async def context_search(search_schema: SearchSchema):
-    c = Client()
-    search = WeaviateContextSearch(c.client)
-    search_results = search.context_search(
-        search_schema.query, 
-        search_schema.reference, 
-        search_schema.limit, 
-        search_schema.collection, 
-        search_schema.properties, 
-        search_schema.references_properties
-    )
-    return search_results
-
+async def context_search(search_schema: SearchSchema, x_api_key: str = Header(...),
+                          x_url: str = Header(...), openai_key: str = Header(...)):
+    try:
+        c = Client(url=x_url, api_key=x_api_key, openai_key=openai_key)
+        search = WeaviateContextSearch(c)
+        search_results = search.context_search(
+            search_schema.query,
+            search_schema.reference,
+            search_schema.limit,
+            search_schema.collection,
+            search_schema.properties,
+            search_schema.references_properties
+        )
+        return search_results
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 @app.post("/add-file-paper/")
-async def add_file_paper(file: UploadFile = File(...)):
+async def add_file_paper(file: UploadFile = File(...),x_api_key: str = Header(...),
+                          x_url: str = Header(...), openai_key: str = Header(...)):
     # Create a temporary file for the uploaded PDF
     with NamedTemporaryFile(delete=False, suffix=".pdf") as temp_pdf:
         # Async write to temporary file
@@ -101,7 +105,7 @@ async def add_file_paper(file: UploadFile = File(...)):
         output_file = f"{output_path}/output.tei.xml"
 
         # Ingest data - Assuming 'Client' is previously defined and works as intended
-        c = Client()
+        c = Client(url=x_url, api_key=x_api_key, openai_key=openai_key)
         c.ingest_data(output_file)
 
     return JSONResponse(content={"filename": file.filename, "processed": True})
